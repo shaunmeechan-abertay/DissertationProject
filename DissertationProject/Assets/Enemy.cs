@@ -10,11 +10,13 @@ public class Enemy : MonoBehaviour
     float speed = 5;
     Vector2 direction;
     int health = 1;
+    ScoreManager scoreManager;
     // Start is called before the first frame update
     void Start()
     {
         pathObject = GameObject.Find("Path");
         direction = new Vector2(0, 0);
+        scoreManager = GameObject.FindObjectOfType<ScoreManager>();
     }
 
     void getNextPathNode()
@@ -25,7 +27,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            Debug.Log("pathNodeIndex: " + pathNodeIndex);
+            //Debug.Log("pathNodeIndex: " + pathNodeIndex);
             targetPathNode = pathObject.transform.GetChild(pathNodeIndex);
             pathNodeIndex++;
         }
@@ -58,8 +60,28 @@ public class Enemy : MonoBehaviour
 
     }
 
+    public void takeDamge(int damage)
+    {
+        health -= damage;
+
+        Debug.Log("Took damage. Health = " + health);
+
+        if(health <= 0)
+        {
+            //Should change this to dedicated func
+            die();
+        }
+    }
+
     void reachedGoal()
     {
+        scoreManager.decrementLife(1);
+        Destroy(gameObject);
+    }
+
+    void die()
+    {
+        scoreManager.incrementMoney(1);
         Destroy(gameObject);
     }
 }
