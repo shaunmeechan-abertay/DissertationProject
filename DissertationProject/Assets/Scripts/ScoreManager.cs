@@ -9,11 +9,12 @@ public class ScoreManager : MonoBehaviour
     int lives = 2;
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI livesText;
-
+    AnalyticsManager analyticsManager;
     private void Start()
     {
         moneyText.text = money.ToString();
         livesText.text = lives.ToString();
+        analyticsManager = GameObject.FindObjectOfType<AnalyticsManager>();
     }
     public void decrementLife(int l = 1)
     {
@@ -57,6 +58,7 @@ public class ScoreManager : MonoBehaviour
 
     void gameOver()
     {
+        analyticsManager.sendLoseEvent();
         Application.Quit();
         UnityEditor.EditorApplication.isPlaying = false;
         
