@@ -7,7 +7,10 @@ public class Tower : MonoBehaviour
     float range = 10f;
     public GameObject bulletPrefab;
     public float coolDown = 1.0f;
-    float fireCoolDownLeft = 0.0f; 
+    float fireCoolDownLeft = 0.0f;
+    public int cost = 5;
+    int damage = 1;
+    public float damageRadius = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,13 +38,16 @@ public class Tower : MonoBehaviour
 
         if(closestEnemy == null)
         {
+            //TODO: If we can't find any enemies then the round is probably over so no point
+            //keeping this object active. It should turn off then be turned back on when a new round starts
             Debug.Log("Could not find any enemies");
             return;
         }
 
         Vector3 dir = closestEnemy.transform.position - this.transform.position;
-        Quaternion lookRot = Quaternion.LookRotation(dir);
+        //Quaternion lookRot = Quaternion.LookRotation(dir);
         //Debug.Log(lookRot.eulerAngles);
+        //This should be looked at again when we have real art in
         transform.right = closestEnemy.transform.position - transform.position;
 
         fireCoolDownLeft -= Time.deltaTime;
@@ -57,6 +63,8 @@ public class Tower : MonoBehaviour
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, this.transform.position, this.transform.rotation);
 
         Bullet bullet = bulletGO.GetComponent<Bullet>();
+        bullet.damage = damage;
+        bullet.radius = damageRadius;
         bullet.target = e.transform;
     }
 }

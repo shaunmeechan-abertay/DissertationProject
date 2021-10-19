@@ -5,7 +5,7 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    int money = 0;
+    int money = 10;
     int lives = 2;
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI livesText;
@@ -28,16 +28,31 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    public void incrementMoney(int score)
+    public void incrementMoney(int value)
     {
-        money += score;
+        money += value;
         moneyText.text = money.ToString();
     }
 
-    public void decrementMoney(int score)
+    public void decrementMoney(int value)
     {
-        money -= score;
+        money -= value;
         moneyText.text = money.ToString();
+    }
+
+    //This function tests if the player can afford an object.
+    //It assumes the player will purchase it so we subtract the cost here as well.
+    public bool canAffordPurchase(int cost)
+    {
+        if (money - cost >= 0)
+        {
+            decrementMoney(cost);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     void gameOver()

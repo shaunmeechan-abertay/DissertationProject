@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 15;
     public int damage = 1;
+    public float radius = 0.0f;
     public Transform target;
     Vector2 direction;
 
@@ -23,7 +24,7 @@ public class Bullet : MonoBehaviour
         if(target == null)
         {
             //Enemy went away
-            Destroy(this);
+            Destroy(this.gameObject);
             return;
         }
         direction = target.position - transform.localPosition;
@@ -46,7 +47,23 @@ public class Bullet : MonoBehaviour
 
     void hitTarget()
     {
-        target.GetComponent<Enemy>().takeDamge(damage);
-        Destroy(this);
+        if(radius == 0)
+        {
+            target.GetComponent<Enemy>().takeDamge(damage);
+        }
+        else
+        {
+            Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, radius);
+            foreach(Collider2D c in cols)
+            {
+                Enemy e = c.GetComponent<Enemy>();
+                if(e != null)
+                {
+                    e.takeDamge(damage);
+                }
+            }
+        }
+
+        Destroy(this.gameObject);
     }
 }

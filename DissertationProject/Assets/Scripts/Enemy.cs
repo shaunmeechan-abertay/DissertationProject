@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     int pathNodeIndex = 0;
     float speed = 5;
     Vector2 direction;
-    int health = 1;
+    public int health = 5;
     ScoreManager scoreManager;
     // Start is called before the first frame update
     void Start()
