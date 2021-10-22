@@ -8,10 +8,12 @@ public class EnemySpawner : MonoBehaviour
     float spawnCooldownleft = 0.0f;
     int waveCounter = 0;
     int groupCounter = 0;
+    AnalyticsManager analyticsManager;
+    AI ai;
     [System.Serializable]
     public class WaveComponent{
-        public GameObject enemyPrefab;
-        public int num;
+        public GameObject enemyPrefab = null;
+        public int num = 0;
         [System.NonSerialized]
         public int spawned = 0;
     }    
@@ -19,21 +21,23 @@ public class EnemySpawner : MonoBehaviour
     [System.Serializable]
     public class Waves{
         public WaveComponent[] waveComponent;
+        public List<WaveComponent> waveComponents = new List<WaveComponent>();
     }
 
-    public WaveComponent[] waveComps;
     public Waves[] waves;
+    public List<Waves> wavesList;
     // Start is called before the first frame update
     void Start()
     {
-        //spawnWave(waves[0]);
+        analyticsManager = GameObject.FindObjectOfType<AnalyticsManager>();
+        ai = GameObject.FindObjectOfType<AI>();
     }
 
     // Update is called once per frame
     void Update()
     {
         spawnCooldownleft -= Time.deltaTime;
-        if(spawnCooldownleft < 0)
+        if(spawnCooldownleft < 0 && waveCounter <= waves.Length)
         {
             spawnCooldownleft = spawnCooldown;
 
@@ -82,8 +86,22 @@ public class EnemySpawner : MonoBehaviour
         waveCounter++;
         if(waveCounter > waves.Length - 1)
         {
-            Destroy(gameObject);
+            Debug.Log("Ran out of wave. Adding another...");
+            ai.spawnNewWave();
+            //analyticsManager.sendWinEvent();
+            //Destroy(gameObject);
         }
+    }
+
+    public void createWave(WaveComponent[] waveComponents)
+    {
+        Debug.Log("create wave was called!");
+        Debug.Log("Received:" + waveComponents);
+        //THIS IS BAD, DO NOT DO!
+        Waves newWave = new Waves();
+        newWave.waveComponents.Add(waveComponents[0]);
+        //newWave.waveComponent[0] = waveComponents[0];
+        wavesList.Add(newWave);
     }
 
 }

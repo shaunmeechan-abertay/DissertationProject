@@ -1317,6 +1317,7 @@ GameObject:
   - component: {fileID: 984674558}
   - component: {fileID: 984674557}
   - component: {fileID: 984674559}
+  - component: {fileID: 984674560}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1365,6 +1366,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedTower: {fileID: 1988355394, guid: 2b01d4ea679b38345aa7a4d5b596d0f6, type: 3}
+--- !u!114 &984674560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984674556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde88a7590cf2dc44be85bd7138e0e50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testEnemy: {fileID: 7548048615654997444, guid: efed79563094a1445bf95a226c9d2134, type: 3}
 --- !u!4 &999854138 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8712207105261531362, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
@@ -1496,22 +1510,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0cffdcc5d23cf4db66188673639214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveComps:
-  - enemyPrefab: {fileID: 7548048615654997444, guid: efed79563094a1445bf95a226c9d2134, type: 3}
-    num: 2
-  - enemyPrefab: {fileID: 7548048615654997444, guid: dc2528ce358a03d40b45c9f257799d87, type: 3}
-    num: 1
   waves:
   - waveComponent:
     - enemyPrefab: {fileID: 7548048615654997444, guid: efed79563094a1445bf95a226c9d2134, type: 3}
       num: 2
     - enemyPrefab: {fileID: 7548048615654997444, guid: dc2528ce358a03d40b45c9f257799d87, type: 3}
       num: 1
+    waveComponents: []
   - waveComponent:
     - enemyPrefab: {fileID: 7548048615654997444, guid: efed79563094a1445bf95a226c9d2134, type: 3}
       num: 2
     - enemyPrefab: {fileID: 7548048615654997444, guid: dc2528ce358a03d40b45c9f257799d87, type: 3}
       num: 1
+    waveComponents: []
+  wavesList: []
 --- !u!4 &1323887643
 Transform:
   m_ObjectHideFlags: 0

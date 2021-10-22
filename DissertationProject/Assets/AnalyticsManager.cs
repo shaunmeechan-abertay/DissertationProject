@@ -19,7 +19,7 @@ public class AnalyticsManager : MonoBehaviour
     public void sendLoseEvent()
     {
         int randomNumber = Random.Range(0, 100);
-       AnalyticsResult analyticsResult = Analytics.CustomEvent("LevelWin:" + randomNumber);
+       AnalyticsResult analyticsResult = Analytics.CustomEvent("LevelLose:" + randomNumber);
         Debug.Log("Analytics result: " + analyticsResult);
     }
 
