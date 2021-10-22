@@ -44,12 +44,14 @@ public class Tower : MonoBehaviour
             return;
         }
 
-        Vector3 dir = closestEnemy.transform.position - this.transform.position;
-        //Quaternion lookRot = Quaternion.LookRotation(dir);
-        //Debug.Log(lookRot.eulerAngles);
+        Vector3 dir = (closestEnemy.transform.position - transform.position).normalized;
         //This should be looked at again when we have real art in
-        transform.right = closestEnemy.transform.position - transform.position;
-
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        if(angle < 0)
+        {
+            angle += 360;
+        }
+        transform.eulerAngles = new Vector3(0, 0, angle);
         fireCoolDownLeft -= Time.deltaTime;
         if(fireCoolDownLeft <= 0 && dir.magnitude <= range)
         {
