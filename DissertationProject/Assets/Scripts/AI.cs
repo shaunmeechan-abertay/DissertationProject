@@ -14,12 +14,13 @@ public class AI : MonoBehaviour
 
     public void spawnNewWave()
     {
-        //EnemySpawner.Waves[] wave = new EnemySpawner.Waves[1];
+        //TODO: Decided if this should be a list or stay as an array
+        //Since the AI will be creating waves etc probably best to have something
+        //That can be adjusted dynamically
         EnemySpawner.WaveComponent waveComponent = new EnemySpawner.WaveComponent();
         EnemySpawner.WaveComponent[] waveComponentArray = new EnemySpawner.WaveComponent[1];
-        //EnemySpawner.WaveComponent waveComponent1 = new EnemySpawner.WaveComponent();
         waveComponent.enemyPrefab = testEnemy;
-        waveComponent.num = 2;
+        waveComponent.num = Random.Range(1,10);
 
         waveComponentArray[0] = waveComponent;
 

@@ -20,11 +20,9 @@ public class EnemySpawner : MonoBehaviour
     
     [System.Serializable]
     public class Waves{
-        public WaveComponent[] waveComponent;
         public List<WaveComponent> waveComponents = new List<WaveComponent>();
     }
 
-    public Waves[] waves;
     public List<Waves> wavesList;
     // Start is called before the first frame update
     void Start()
@@ -37,7 +35,9 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         spawnCooldownleft -= Time.deltaTime;
-        if(spawnCooldownleft < 0 && waveCounter <= waves.Length)
+        Waves currentWave = wavesList[0];
+
+        if(spawnCooldownleft < 0 && wavesList.Count != 0)
         {
             spawnCooldownleft = spawnCooldown;
 
@@ -54,14 +54,14 @@ public class EnemySpawner : MonoBehaviour
             //    }
             //}
 
-            for (int i = groupCounter; i < waves[waveCounter].waveComponent.Length; i++)
+            for (int i = groupCounter; i < currentWave.waveComponents.Count; i++)
             {
                 //Go through the component and spawn the enemies in it
-                if(waves[waveCounter].waveComponent[i].spawned < waves[waveCounter].waveComponent[i].num)
+                if(currentWave.waveComponents[i].spawned < currentWave.waveComponents[i].num)
                 {
                         //Spawn it
-                        Instantiate(waves[waveCounter].waveComponent[i].enemyPrefab, transform.position, transform.rotation);
-                        waves[waveCounter].waveComponent[i].spawned++;
+                        Instantiate(currentWave.waveComponents[i].enemyPrefab, transform.position, transform.rotation);
+                        currentWave.waveComponents[i].spawned++;
                         break;
                 }
                 else
@@ -72,7 +72,7 @@ public class EnemySpawner : MonoBehaviour
             }
 
             //Check to see if this wave finished
-            if(groupCounter >= waves[waveCounter].waveComponent.Length)
+            if(groupCounter >= currentWave.waveComponents.Count)
             {
                 Debug.Log("Wave finished!");
                 increaseWaveCounter();
@@ -84,7 +84,8 @@ public class EnemySpawner : MonoBehaviour
     void increaseWaveCounter()
     {
         waveCounter++;
-        if(waveCounter > waves.Length - 1)
+        wavesList.RemoveAt(0);
+        if(waveCounter > wavesList.Count - 1)
         {
             Debug.Log("Ran out of wave. Adding another...");
             ai.spawnNewWave();
@@ -97,10 +98,12 @@ public class EnemySpawner : MonoBehaviour
     {
         Debug.Log("create wave was called!");
         Debug.Log("Received:" + waveComponents);
-        //THIS IS BAD, DO NOT DO!
+
         Waves newWave = new Waves();
-        newWave.waveComponents.Add(waveComponents[0]);
-        //newWave.waveComponent[0] = waveComponents[0];
+        for (int i = 0; i < waveComponents.Length; i++)
+        {
+            newWave.waveComponents.Add(waveComponents[i]);
+        }
         wavesList.Add(newWave);
     }
 

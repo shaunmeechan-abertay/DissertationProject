@@ -13,7 +13,7 @@ public class BuildPad : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        Debug.Log("Build pad clicked");
+        //Debug.Log("Build pad clicked");
 
         if(buildingManager.selectedTower != null && scoreManager.canAffordPurchase(buildingManager.selectedTower.cost) == true)
         {
