@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour
     int groupCounter = 0;
     AnalyticsManager analyticsManager;
     AI ai;
+    List<Tower> towers;
     [System.Serializable]
     public class WaveComponent{
         public GameObject enemyPrefab = null;
@@ -29,6 +30,7 @@ public class EnemySpawner : MonoBehaviour
     {
         analyticsManager = GameObject.FindObjectOfType<AnalyticsManager>();
         ai = GameObject.FindObjectOfType<AI>();
+        towers = new List<Tower>();
     }
 
     // Update is called once per frame
@@ -40,19 +42,6 @@ public class EnemySpawner : MonoBehaviour
         if(spawnCooldownleft < 0 && wavesList.Count != 0)
         {
             spawnCooldownleft = spawnCooldown;
-
-            //Go through the wave until we find something to spawn
-            //foreach (WaveComponent wc in waveComps)
-            //{
-            //    if (wc.spawned < wc.num)
-            //    {
-            //        //Spawn it
-            //        Instantiate(wc.enemyPrefab, transform.position, transform.rotation);
-            //        wc.spawned++;
-            //        spawned = true;
-            //        break;
-            //    }
-            //}
 
             for (int i = groupCounter; i < currentWave.waveComponents.Count; i++)
             {
@@ -67,7 +56,6 @@ public class EnemySpawner : MonoBehaviour
                 else
                 {
                     groupCounter++;
-                    //break;
                 }
             }
 
@@ -97,7 +85,6 @@ public class EnemySpawner : MonoBehaviour
     public void createWave(WaveComponent[] waveComponents)
     {
         Debug.Log("create wave was called!");
-        Debug.Log("Received:" + waveComponents);
 
         Waves newWave = new Waves();
         for (int i = 0; i < waveComponents.Length; i++)
@@ -105,6 +92,19 @@ public class EnemySpawner : MonoBehaviour
             newWave.waveComponents.Add(waveComponents[i]);
         }
         wavesList.Add(newWave);
+
+        //Wake the towers
+        for (int i = 0; i < towers.Count; i++)
+        {
+            towers[i].enabled = true;
+        }
+    }
+
+    //TODO: We should have a function to remove towers
+    //This means the towers should have an unique ID
+    public void addTower(Tower newTower)
+    {
+        towers.Add(newTower);
     }
 
 }

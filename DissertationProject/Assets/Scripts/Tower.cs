@@ -40,7 +40,7 @@ public class Tower : MonoBehaviour
         {
             //TODO: If we can't find any enemies then the round is probably over so no point
             //keeping this object active. It should turn off then be turned back on when a new round starts
-            Debug.Log("Could not find any enemies");
+            //Debug.Log("Could not find any enemies");
             return;
         }
 
