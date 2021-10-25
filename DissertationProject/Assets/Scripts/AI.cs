@@ -7,15 +7,22 @@ public class AI : MonoBehaviour
     EnemySpawner enemySpawner;
     public Enemy[] enemies;
     List<Tower> towers;
-
+    ScoreManager scoreManager;
+    //DEBUG COMMANDS
+    public bool shouldDeleteTowers = false;
+    public bool shouldDecrementHealth = false;
+    public bool shouldDecrementMoney = false;
     private void Start()
     {
         enemySpawner = GameObject.FindObjectOfType<EnemySpawner>();
+        scoreManager = GameObject.FindObjectOfType<ScoreManager>();
         towers = new List<Tower>();
     }
 
     public void spawnNewWave()
     {
+        int randomNumber = 0;
+
         //TODO: Decided if this should be a list or stay as an array
         //Since the AI will be creating waves etc probably best to have something
         //That can be adjusted dynamically
@@ -29,14 +36,34 @@ public class AI : MonoBehaviour
 
         enemySpawner.createWave(waveComponentArray);
 
-        int randomNumber = Random.Range(0, 11);
-        if(randomNumber != 0)
+        if(shouldDeleteTowers == true)
         {
-            return;
+            randomNumber = Random.Range(0, 11);
+            if(randomNumber == 0)
+            {
+                destroyTower();
+                return;
+            }
         }
-        else
+
+        if (shouldDecrementHealth == true)
         {
-            destroyTower();
+            randomNumber = Random.Range(0, 1);
+            if (randomNumber == 0)
+            {
+                subtractPlayerHealth();
+                return;
+            }
+        }
+
+        if(shouldDecrementMoney == true)
+        {
+            randomNumber = Random.Range(0, 1);
+            if(randomNumber == 0)
+            {
+                subtractPlayerMoney();
+                return;
+            }
         }
     }
 
@@ -63,5 +90,15 @@ public class AI : MonoBehaviour
             }
         }
 
+    }
+
+    public void subtractPlayerHealth()
+    {
+        scoreManager.decrementLife();
+    }
+
+    public void subtractPlayerMoney()
+    {
+        scoreManager.decrementMoney(5);
     }
 }

@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     GameObject pathObject;
     Transform targetPathNode;
     int pathNodeIndex = 0;
-    float speed = 5;
+    public float speed = 5;
     Vector2 direction;
     public int health = 5;
     ScoreManager scoreManager;
