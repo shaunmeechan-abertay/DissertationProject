@@ -64,11 +64,8 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
 
-        //Debug.Log("Took damage. Health = " + health);
-
         if(health <= 0)
         {
-            //Should change this to dedicated func
             die();
         }
     }

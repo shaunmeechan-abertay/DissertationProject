@@ -6,22 +6,20 @@ public class BuildPad : MonoBehaviour
 {
     BuildingManager buildingManager;
     ScoreManager scoreManager;
-    EnemySpawner enemySpawner;
+    AI ai;
 
     private void Start()
     {
         buildingManager = GameObject.FindObjectOfType<BuildingManager>();
         scoreManager = GameObject.FindObjectOfType<ScoreManager>();
-        enemySpawner = GameObject.FindObjectOfType<EnemySpawner>();
+        ai = GameObject.FindObjectOfType<AI>();
     }
     private void OnMouseUp()
     {
-        //Debug.Log("Build pad clicked");
-
         if(buildingManager.selectedTower != null && scoreManager.canAffordPurchase(buildingManager.selectedTower.cost) == true)
         {
             GameObject newTower = Instantiate(buildingManager.selectedTower.gameObject, transform.position, transform.rotation);
-            enemySpawner.addTower(newTower.GetComponent<Tower>());
+            ai.addTower(newTower.GetComponent<Tower>());
             Destroy(this.gameObject);
         }
     }

@@ -11,11 +11,11 @@ public class Tower : MonoBehaviour
     public int cost = 5;
     int damage = 1;
     public float damageRadius = 0.0f;
+
     // Start is called before the first frame update
-    void Start()
-    {
-            
-    }
+    //void Start()
+    //{
+    //}
 
     // Update is called once per frame
     void Update()

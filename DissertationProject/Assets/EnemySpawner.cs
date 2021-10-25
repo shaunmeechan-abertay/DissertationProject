@@ -10,7 +10,6 @@ public class EnemySpawner : MonoBehaviour
     int groupCounter = 0;
     AnalyticsManager analyticsManager;
     AI ai;
-    List<Tower> towers;
     [System.Serializable]
     public class WaveComponent{
         public GameObject enemyPrefab = null;
@@ -30,7 +29,6 @@ public class EnemySpawner : MonoBehaviour
     {
         analyticsManager = GameObject.FindObjectOfType<AnalyticsManager>();
         ai = GameObject.FindObjectOfType<AI>();
-        towers = new List<Tower>();
     }
 
     // Update is called once per frame
@@ -92,19 +90,5 @@ public class EnemySpawner : MonoBehaviour
             newWave.waveComponents.Add(waveComponents[i]);
         }
         wavesList.Add(newWave);
-
-        //Wake the towers
-        for (int i = 0; i < towers.Count; i++)
-        {
-            towers[i].enabled = true;
-        }
     }
-
-    //TODO: We should have a function to remove towers
-    //This means the towers should have an unique ID
-    public void addTower(Tower newTower)
-    {
-        towers.Add(newTower);
-    }
-
 }

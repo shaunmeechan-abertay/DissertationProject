@@ -7,8 +7,6 @@ using UnityEngine.Analytics;
 
 public class AnalyticsManager : MonoBehaviour
 {
-
-
     public void sendWinEvent()
     {
         int randomNumber = Random.Range(0, 100);
@@ -22,6 +20,4 @@ public class AnalyticsManager : MonoBehaviour
        AnalyticsResult analyticsResult = Analytics.CustomEvent("LevelLose:" + randomNumber);
         Debug.Log("Analytics result: " + analyticsResult);
     }
-
-
 }

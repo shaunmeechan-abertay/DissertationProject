@@ -5,11 +5,13 @@ using UnityEngine;
 public class AI : MonoBehaviour
 {
     EnemySpawner enemySpawner;
-    public GameObject testEnemy;
+    public Enemy[] enemies;
+    List<Tower> towers;
 
     private void Start()
     {
         enemySpawner = GameObject.FindObjectOfType<EnemySpawner>();
+        towers = new List<Tower>();
     }
 
     public void spawnNewWave()
@@ -19,12 +21,47 @@ public class AI : MonoBehaviour
         //That can be adjusted dynamically
         EnemySpawner.WaveComponent waveComponent = new EnemySpawner.WaveComponent();
         EnemySpawner.WaveComponent[] waveComponentArray = new EnemySpawner.WaveComponent[1];
-        waveComponent.enemyPrefab = testEnemy;
+        int enemyToUse = Random.Range(0, enemies.Length);
+        waveComponent.enemyPrefab = enemies[enemyToUse].gameObject;
         waveComponent.num = Random.Range(1,10);
 
         waveComponentArray[0] = waveComponent;
 
-        //wave[0].waveComponent = waveComponent;
         enemySpawner.createWave(waveComponentArray);
+
+        int randomNumber = Random.Range(0, 11);
+        if(randomNumber != 0)
+        {
+            return;
+        }
+        else
+        {
+            destroyTower();
+        }
+    }
+
+    public void addTower(Tower newTower)
+    {
+        towers.Add(newTower);
+    }
+
+    public int getTowersCount()
+    {
+        return towers.Count;
+    }
+
+    void destroyTower()
+    {
+        int randomNumber = Random.Range(0, towers.Count);
+        Destroy(towers[randomNumber].gameObject);
+
+        for (int i = 0; i < towers.Count; i++)
+        {
+            if(towers[i] == null)
+            {
+                towers.RemoveAt(i);
+            }
+        }
+
     }
 }
