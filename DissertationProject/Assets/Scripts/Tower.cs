@@ -11,7 +11,6 @@ public class Tower : MonoBehaviour
     public int cost = 5;
     public int damage = 1;
     public float damageRadius = 0.0f;
-    public Sprite[] sprites;
     Animator animator;
 
     // Start is called before the first frame update
