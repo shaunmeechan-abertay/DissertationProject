@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6522330427018214528}
   - component: {fileID: 6201692974399467969}
   - component: {fileID: 1988355394}
+  - component: {fileID: 964300537232984181}
   m_Layer: 0
   m_Name: Tower_Fast
   m_TagString: Untagged
@@ -72,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 3625043607559282579, guid: 0d267bc78a0864eb48358689b29ed20a, type: 3}
-  m_Color: {r: 0.25402117, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 7084651940139271958, guid: b63a9aaafaee46e4d8bcb10c7060c506, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,4 +99,24 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5397591851266937782, guid: fd3ccc5d165c4814e9861a7106ec2e61, type: 3}
   coolDown: 0.1
   cost: 5
+  damage: 1
   damageRadius: 0
+--- !u!95 &964300537232984181
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302872119167655722}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9581e0ead4b4b0c4fb639a0fcbc1a332, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

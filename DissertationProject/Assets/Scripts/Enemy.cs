@@ -54,8 +54,16 @@ public class Enemy : MonoBehaviour
         {
             //Move towards the node
             transform.Translate(direction.normalized * disThisFrame, Space.World);
-            float z = Quaternion.LookRotation(direction).z;
-            transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, z, transform.rotation.w);
+            //float z = Quaternion.LookRotation(direction).z;
+            //transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, z, transform.rotation.w);
+
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            if (angle < 0)
+            {
+                angle += 360;
+            }
+            transform.eulerAngles = new Vector3(0, 0, angle);
+
         }
 
     }
