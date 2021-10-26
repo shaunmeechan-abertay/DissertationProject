@@ -9,22 +9,28 @@ public class Bullet : MonoBehaviour
     public float radius = 0.0f;
     public Transform target;
     Vector2 direction;
+    AudioSource audioSource;
+    bool shouldSelfDestruct = true;
 
     // Start is called before the first frame update
     void Start()
     {
         direction = new Vector2(0, 0);
-
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if(target == null)
+        if(target == null && shouldSelfDestruct == true)
         {
             //Enemy went away
             Destroy(this.gameObject);
+            return;
+        }
+
+        if(shouldSelfDestruct == false)
+        {
             return;
         }
         direction = target.position - transform.localPosition;
@@ -64,6 +70,23 @@ public class Bullet : MonoBehaviour
             }
         }
 
+        if (GetComponent<AudioSource>() != null)
+        {
+            StartCoroutine(destory());
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    IEnumerator destory()
+    {
+        shouldSelfDestruct = false;
+        GetComponent<SpriteRenderer>().enabled = false;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.PlayOneShot(audioSource.clip);
+        yield return new WaitForSeconds(audioSource.clip.length);
         Destroy(this.gameObject);
     }
 }
