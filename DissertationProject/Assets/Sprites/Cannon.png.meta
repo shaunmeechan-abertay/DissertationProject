@@ -1,37 +1,28 @@
 fileFormatVersion: 2
-guid: 806eb5ec53f02564097de71eac744eaa
+guid: 71dec47b0373db0498be8e37e290200b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7974414106778158896
-    second: Sniper tower_0
+      213: -6809907661698028246
+    second: Cannon_0
   - first:
-      213: 9023115892187537150
-    second: Sniper tower_1
+      213: -7488512282933653102
+    second: Cannon_1
   - first:
-      213: 2162206346520433737
-    second: Sniper tower_2
+      213: 257534005595174233
+    second: Cannon_2
   - first:
-      213: 3652062131348118741
-    second: Sniper tower_3
+      213: -151904140458157166
+    second: Cannon_3
   - first:
-      213: 4299313177275545815
-    second: Sniper tower_4
+      213: -4516395305386079132
+    second: Cannon_4
   - first:
-      213: -8357118947485123321
-    second: Sniper tower_5
+      213: -4754046974439256820
+    second: Cannon_5
   - first:
-      213: 7434429313014503815
-    second: Sniper tower_6
-  - first:
-      213: 2118406045798871525
-    second: Sniper tower_7
-  - first:
-      213: -5260962192970144503
-    second: Sniper tower_8
-  - first:
-      213: -4729366680585983859
-    second: Sniper tower_9
+      213: -8342537765474309362
+    second: Cannon_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -145,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sniper tower_0
+      name: Cannon_0
       rect:
         serializedVersion: 2
         x: 0
@@ -159,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d8bf91ce90355190800000000000000
-      internalID: -7974414106778158896
+      spriteID: a2d2747ef095e71a0800000000000000
+      internalID: -6809907661698028246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sniper tower_1
+      name: Cannon_1
       rect:
         serializedVersion: 2
         x: 320
@@ -180,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efe1501f81c883d70800000000000000
-      internalID: 9023115892187537150
+      spriteID: 291179721c5731890800000000000000
+      internalID: -7488512282933653102
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sniper tower_2
+      name: Cannon_2
       rect:
         serializedVersion: 2
         x: 640
@@ -201,35 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 944127f5733b10e10800000000000000
-      internalID: 2162206346520433737
+      spriteID: 955751940d1f29300800000000000000
+      internalID: 257534005595174233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sniper tower_3
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 640
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5dc19a4b82bbea230800000000000000
-      internalID: 3652062131348118741
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sniper tower_4
+      name: Cannon_3
       rect:
         serializedVersion: 2
         x: 320
@@ -243,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d83aa55e8a3aab30800000000000000
-      internalID: 4299313177275545815
+      spriteID: 29b94143df354edf0800000000000000
+      internalID: -151904140458157166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sniper tower_5
+      name: Cannon_4
       rect:
         serializedVersion: 2
         x: 640
@@ -264,35 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70d767d589c850c80800000000000000
-      internalID: -8357118947485123321
+      spriteID: 46c883d066a8251c0800000000000000
+      internalID: -4516395305386079132
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sniper tower_6
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 320
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7891bf522166c2760800000000000000
-      internalID: 7434429313014503815
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sniper tower_7
+      name: Cannon_5
       rect:
         serializedVersion: 2
         x: 320
@@ -306,14 +255,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e1b1e92317166d10800000000000000
-      internalID: 2118406045798871525
+      spriteID: c0d070bf67b360eb0800000000000000
+      internalID: -4754046974439256820
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sniper tower_8
+      name: Cannon_6
       rect:
         serializedVersion: 2
         x: 640
@@ -327,29 +276,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 905214f52ce4df6b0800000000000000
-      internalID: -5260962192970144503
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sniper tower_9
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 0
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d88aa1faf0aed5eb0800000000000000
-      internalID: -4729366680585983859
+      spriteID: e0b6f9b5a1a593c80800000000000000
+      internalID: -8342537765474309362
       vertices: []
       indices: 
       edges: []

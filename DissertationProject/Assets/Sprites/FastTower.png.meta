@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 89b1b13de41cd704b84d14017db4c285
+guid: b63a9aaafaee46e4d8bcb10c7060c506
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4027443390588105909
-    second: Sniper tower (1)_0
+      213: -110911610531068847
+    second: FastTower_0
   - first:
-      213: 1115737393083706611
-    second: Sniper tower (1)_1
+      213: 7084651940139271958
+    second: FastTower_1
+  - first:
+      213: -7535248898173253970
+    second: FastTower_2
+  - first:
+      213: 6987301943881427376
+    second: FastTower_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,7 +127,49 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sniper tower (1)_0
+      name: FastTower_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15444d45a76f57ef0800000000000000
+      internalID: -110911610531068847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FastTower_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6178849476db15260800000000000000
+      internalID: 7084651940139271958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FastTower_2
       rect:
         serializedVersion: 2
         x: 0
@@ -135,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b4bff8ec6a54e730800000000000000
-      internalID: 4027443390588105909
+      spriteID: ea6ca32fc0b6d6790800000000000000
+      internalID: -7535248898173253970
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sniper tower (1)_1
+      name: FastTower_3
       rect:
         serializedVersion: 2
         x: 320
@@ -156,8 +204,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fcef516f35eb7f00800000000000000
-      internalID: 1115737393083706611
+      spriteID: 0b9e27ff812e7f060800000000000000
+      internalID: 6987301943881427376
       vertices: []
       indices: 
       edges: []

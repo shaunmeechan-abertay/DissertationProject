@@ -9,17 +9,29 @@ public class Tower : MonoBehaviour
     public float coolDown = 1.0f;
     float fireCoolDownLeft = 0.0f;
     public int cost = 5;
-    int damage = 1;
+    public int damage = 1;
     public float damageRadius = 0.0f;
+    Animator animator;
 
     // Start is called before the first frame update
-    //void Start()
-    //{
-    //}
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
     {
+        if(fireCoolDownLeft > 0)
+        {
+            fireCoolDownLeft -= Time.deltaTime;
+        }
+
+
+        //if (fireCoolDownLeft <= 0)
+        //{
+        //}
+
         //TODO: Optimise this
         Enemy[] enemies = GameObject.FindObjectsOfType<Enemy>();
 
@@ -52,11 +64,15 @@ public class Tower : MonoBehaviour
             angle += 360;
         }
         transform.eulerAngles = new Vector3(0, 0, angle);
-        fireCoolDownLeft -= Time.deltaTime;
-        if(fireCoolDownLeft <= 0 && dir.magnitude <= range)
+
+        if (fireCoolDownLeft <= 0 && dir.magnitude <= range)
         {
             fireCoolDownLeft = coolDown;
             fire(closestEnemy);
+        }
+        else
+        {
+            animator.SetBool("canFire", false);
         }
     }
 
@@ -68,5 +84,6 @@ public class Tower : MonoBehaviour
         bullet.damage = damage;
         bullet.radius = damageRadius;
         bullet.target = e.transform;
+        animator.SetBool("canFire", true);
     }
 }
