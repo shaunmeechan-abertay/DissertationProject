@@ -27,10 +27,10 @@ public class Tower : MonoBehaviour
             fireCoolDownLeft -= Time.deltaTime;
         }
 
-        if(fireCoolDownLeft <= 0)
-        {
-            animator.SetBool("canFire", false);
-        }
+
+        //if (fireCoolDownLeft <= 0)
+        //{
+        //}
 
         //TODO: Optimise this
         Enemy[] enemies = GameObject.FindObjectsOfType<Enemy>();
@@ -69,6 +69,10 @@ public class Tower : MonoBehaviour
         {
             fireCoolDownLeft = coolDown;
             fire(closestEnemy);
+        }
+        else
+        {
+            animator.SetBool("canFire", false);
         }
     }
 
