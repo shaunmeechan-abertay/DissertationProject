@@ -12,11 +12,13 @@ public class Tower : MonoBehaviour
     public int damage = 1;
     public float damageRadius = 0.0f;
     Animator animator;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -85,5 +87,6 @@ public class Tower : MonoBehaviour
         bullet.radius = damageRadius;
         bullet.target = e.transform;
         animator.SetBool("canFire", true);
+        audioSource.PlayOneShot(audioSource.clip);
     }
 }
