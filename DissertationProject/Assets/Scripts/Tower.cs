@@ -13,12 +13,13 @@ public class Tower : MonoBehaviour
     public float damageRadius = 0.0f;
     Animator animator;
     AudioSource audioSource;
-
+    EnemySpawner enemySpawner;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        enemySpawner = GameObject.FindObjectOfType<EnemySpawner>();
     }
 
     // Update is called once per frame
@@ -29,12 +30,6 @@ public class Tower : MonoBehaviour
             fireCoolDownLeft -= Time.deltaTime;
         }
 
-
-        //if (fireCoolDownLeft <= 0)
-        //{
-        //}
-
-        //TODO: Optimise this
         Enemy[] enemies = GameObject.FindObjectsOfType<Enemy>();
 
         Enemy closestEnemy = null;
@@ -59,7 +54,6 @@ public class Tower : MonoBehaviour
         }
 
         Vector3 dir = (closestEnemy.transform.position - transform.position).normalized;
-        //This should be looked at again when we have real art in
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         if(angle < 0)
         {

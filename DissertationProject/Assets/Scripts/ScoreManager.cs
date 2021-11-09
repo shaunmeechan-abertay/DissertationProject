@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using TMPro;
 
 public class ScoreManager : MonoBehaviour
@@ -70,8 +71,7 @@ public class ScoreManager : MonoBehaviour
     {
         analyticsManager.sendLoseEvent();
         Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
-        
+        //EditorApplication.isPlaying = false;        
     }
 
 }
