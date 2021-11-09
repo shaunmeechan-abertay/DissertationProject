@@ -35,12 +35,14 @@ public class buildUIObjectParent : MonoBehaviour
             {
                 print("We hit something with no collider (e.g the ground)");
                 Destroy(gameObject);
+                return;
             }
 
             //Clicked an enemy
             if (hit.collider.GetComponent<Enemy>().isActiveAndEnabled == true)
             {
                 Destroy(gameObject);
+                return;
             }
 
         }

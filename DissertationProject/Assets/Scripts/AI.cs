@@ -8,6 +8,7 @@ public class AI : MonoBehaviour
     public Enemy[] enemies;
     List<Tower> towers;
     ScoreManager scoreManager;
+
     //DEBUG COMMANDS
     public bool shouldDeleteTowers = false;
     public bool shouldDecrementHealth = false;
@@ -29,6 +30,7 @@ public class AI : MonoBehaviour
         EnemySpawner.WaveComponent[] waveComponentArray = new EnemySpawner.WaveComponent[1];
         int enemyToUse = Random.Range(0, enemies.Length);
         waveComponent.enemyPrefab = enemies[enemyToUse].gameObject;
+
         waveComponent.num = Random.Range(1,10);
 
         waveComponentArray[0] = waveComponent;

@@ -8,6 +8,8 @@ public class EnemySpawner : MonoBehaviour
     float spawnCooldownleft = 0.0f;
     int waveCounter = 0;
     int groupCounter = 0;
+    int healthScale = 1;
+
     AnalyticsManager analyticsManager;
     AI ai;
     [System.Serializable]
@@ -46,10 +48,11 @@ public class EnemySpawner : MonoBehaviour
                 //Go through the component and spawn the enemies in it
                 if(currentWave.waveComponents[i].spawned < currentWave.waveComponents[i].num)
                 {
-                        //Spawn it
-                        Instantiate(currentWave.waveComponents[i].enemyPrefab, transform.position, transform.rotation);
-                        currentWave.waveComponents[i].spawned++;
-                        break;
+                    //Spawn it
+                    GameObject temp = Instantiate(currentWave.waveComponents[i].enemyPrefab, transform.position, transform.rotation);
+                    temp.GetComponent<Enemy>().health *= healthScale;
+                    currentWave.waveComponents[i].spawned++;
+                    break;
                 }
                 else
                 {
@@ -90,5 +93,6 @@ public class EnemySpawner : MonoBehaviour
             newWave.waveComponents.Add(waveComponents[i]);
         }
         wavesList.Add(newWave);
+        healthScale += 1;
     }
 }
