@@ -21,7 +21,6 @@ public class AI : MonoBehaviour
 
     public void spawnNewWave()
     {
-        int randomNumber = 0;
 
         //TODO: Decided if this should be a list or stay as an array
         //Since the AI will be creating waves etc probably best to have something
@@ -34,12 +33,20 @@ public class AI : MonoBehaviour
 
         waveComponentArray[0] = waveComponent;
 
+        scoreManager.incrementWaveCounter();
         enemySpawner.createWave(waveComponentArray);
 
-        if(shouldDeleteTowers == true)
+        cheat();
+    }
+
+    //This function will randomly cheat when a new wave is created
+    void cheat()
+    {
+        int randomNumber = 0;
+        if (shouldDeleteTowers == true)
         {
             randomNumber = Random.Range(0, 11);
-            if(randomNumber == 0)
+            if (randomNumber == 0)
             {
                 destroyTower();
                 return;
@@ -56,10 +63,10 @@ public class AI : MonoBehaviour
             }
         }
 
-        if(shouldDecrementMoney == true)
+        if (shouldDecrementMoney == true)
         {
             randomNumber = Random.Range(0, 1);
-            if(randomNumber == 0)
+            if (randomNumber == 0)
             {
                 subtractPlayerMoney();
                 return;

@@ -7,13 +7,17 @@ public class ScoreManager : MonoBehaviour
 {
     int money = 10;
     int lives = 2;
+    int wave = 1;
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI livesText;
+    public TextMeshProUGUI waveText;
+
     AnalyticsManager analyticsManager;
     private void Start()
     {
-        moneyText.text = money.ToString();
-        livesText.text = lives.ToString();
+        moneyText.text = "Cash:" + money.ToString();
+        livesText.text = "Lives:" + lives.ToString();
+        waveText.text = "Wave:" + wave.ToString();
         analyticsManager = GameObject.FindObjectOfType<AnalyticsManager>();
     }
     public void decrementLife(int l = 1)
@@ -25,20 +29,26 @@ public class ScoreManager : MonoBehaviour
         }
         else
         {
-            livesText.text = lives.ToString();
+            livesText.text = "Lives:" + lives.ToString();
         }
     }
 
     public void incrementMoney(int value)
     {
         money += value;
-        moneyText.text = money.ToString();
+        moneyText.text = "Cash:" + money.ToString();
     }
 
     public void decrementMoney(int value)
     {
         money -= value;
-        moneyText.text = money.ToString();
+        moneyText.text = "Cash:" + money.ToString();
+    }
+
+    public void incrementWaveCounter()
+    {
+        wave++;
+        waveText.text = "Wave:" + wave.ToString();
     }
 
     //This function tests if the player can afford an object.
