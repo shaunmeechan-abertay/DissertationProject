@@ -7,6 +7,7 @@ public class AI : MonoBehaviour
     EnemySpawner enemySpawner;
     public Enemy[] enemies;
     List<Tower> towers;
+    List<Tower> centreTowers;
     ScoreManager scoreManager;
     AnalyticsManager analyticsManager;
 
@@ -14,12 +15,14 @@ public class AI : MonoBehaviour
     public bool shouldDeleteTowers = false;
     public bool shouldDecrementHealth = false;
     public bool shouldDecrementMoney = false;
+    public bool shouldDestoryCentreTowers = false;
     private void Start()
     {
         enemySpawner = GameObject.FindObjectOfType<EnemySpawner>();
         scoreManager = GameObject.FindObjectOfType<ScoreManager>();
         analyticsManager = GameObject.FindObjectOfType<AnalyticsManager>();
         towers = new List<Tower>();
+        centreTowers = new List<Tower>();
     }
 
     public void spawnNewWave()
@@ -82,11 +85,30 @@ public class AI : MonoBehaviour
                 return;
             }
         }
+
+        if (shouldDestoryCentreTowers == true)
+        {
+            randomNumber = Random.Range(0, 1);
+            if (randomNumber == 0)
+            {
+                Debug.Log("Cheated by destorying centre towers");
+                for (int i = 0; i < centreTowers.Count; i++)
+                {
+                    Destroy(centreTowers[i].gameObject);
+                }
+                return;
+            }
+        }
     }
 
     public void addTower(Tower newTower)
     {
         towers.Add(newTower);
+    }
+
+    public void addCentreTower(Tower newTower)
+    {
+        centreTowers.Add(newTower);
     }
 
     public int getTowersCount()

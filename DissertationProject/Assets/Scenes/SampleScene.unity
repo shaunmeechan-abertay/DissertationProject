@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (28)
+      value: BuildPad - LR4L
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -216,7 +216,7 @@ PrefabInstance:
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (18)
+      value: BuildPad - RR3L
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -276,12 +276,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 92247645}
     m_Modifications:
     - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: isCentre
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: buildUIObject
       value: 
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (7)
+      value: BuildPad - CR2C
+      objectReference: {fileID: 0}
+    - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -360,9 +368,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1775984445}
   - {fileID: 1850189115}
   - {fileID: 1507037434}
+  - {fileID: 1775984445}
   - {fileID: 1137070413}
   - {fileID: 1264507561}
   - {fileID: 1084110222}
@@ -627,7 +635,7 @@ PrefabInstance:
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (21)
+      value: BuildPad - RR4R
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -687,12 +695,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 92247645}
     m_Modifications:
     - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: isCentre
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: buildUIObject
       value: 
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (4)
+      value: BuildPad - CR1C
+      objectReference: {fileID: 0}
+    - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -839,7 +855,7 @@ PrefabInstance:
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (23)
+      value: BuildPad - LR2R
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -904,7 +920,7 @@ PrefabInstance:
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (22)
+      value: BuildPad - LR1L
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -969,7 +985,7 @@ PrefabInstance:
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (3)
+      value: BuildPad - LR1R
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -977,7 +993,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8712207105261531362, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712207105261531362, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1193,7 +1209,7 @@ PrefabInstance:
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (17)
+      value: BuildPad - RR2R
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1253,12 +1269,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 92247645}
     m_Modifications:
     - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: isCentre
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: buildUIObject
       value: 
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (13)
+      value: BuildPad - CR5C
+      objectReference: {fileID: 0}
+    - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1323,7 +1347,7 @@ PrefabInstance:
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (19)
+      value: BuildPad - RR3R
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1496,12 +1520,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 92247645}
     m_Modifications:
     - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: isCentre
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: buildUIObject
       value: 
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad
+      value: BuildPad - CR1L
+      objectReference: {fileID: 0}
+    - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1509,7 +1541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8712207105261531362, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8712207105261531362, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1576,7 +1608,7 @@ PrefabInstance:
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (30)
+      value: BuildPad - LR5L
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2037,12 +2069,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 92247645}
     m_Modifications:
     - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: isCentre
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: buildUIObject
       value: 
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (12)
+      value: BuildPad - CR4R
+      objectReference: {fileID: 0}
+    - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2173,12 +2213,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 92247645}
     m_Modifications:
     - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: isCentre
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: buildUIObject
       value: 
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (10)
+      value: BuildPad - CR3C
+      objectReference: {fileID: 0}
+    - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2632,6 +2680,7 @@ MonoBehaviour:
   shouldDeleteTowers: 0
   shouldDecrementHealth: 0
   shouldDecrementMoney: 0
+  shouldDestoryCentreTowers: 0
 --- !u!1001 &1002057569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2640,12 +2689,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 92247645}
     m_Modifications:
     - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: isCentre
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: buildUIObject
       value: 
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (9)
+      value: BuildPad - CR3R
+      objectReference: {fileID: 0}
+    - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2815,7 +2872,7 @@ PrefabInstance:
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (16)
+      value: BuildPad - RR2L
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2928,7 +2985,7 @@ PrefabInstance:
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (27)
+      value: BuildPad - LR4R
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3172,7 +3229,7 @@ PrefabInstance:
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (15)
+      value: BuildPad - RR1R
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3338,12 +3395,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 92247645}
     m_Modifications:
     - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: isCentre
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: buildUIObject
       value: 
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (6)
+      value: BuildPad - CR2R
+      objectReference: {fileID: 0}
+    - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3413,12 +3478,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 92247645}
     m_Modifications:
     - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: isCentre
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: buildUIObject
       value: 
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (8)
+      value: BuildPad - CR2L
+      objectReference: {fileID: 0}
+    - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3615,7 +3688,7 @@ PrefabInstance:
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (25)
+      value: BuildPad - LR3R
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3808,12 +3881,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 92247645}
     m_Modifications:
     - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: isCentre
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: buildUIObject
       value: 
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (14)
+      value: BuildPad - CR5L
+      objectReference: {fileID: 0}
+    - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3873,12 +3954,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 92247645}
     m_Modifications:
     - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: isCentre
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: buildUIObject
       value: 
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (5)
+      value: BuildPad - CR1R
+      objectReference: {fileID: 0}
+    - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3943,7 +4032,7 @@ PrefabInstance:
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (2)
+      value: BuildPad - RR1L
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3951,7 +4040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8712207105261531362, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8712207105261531362, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4008,7 +4097,7 @@ PrefabInstance:
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (26)
+      value: BuildPad - LR3L
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4144,7 +4233,7 @@ PrefabInstance:
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (20)
+      value: BuildPad - RR4L
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4343,12 +4432,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 92247645}
     m_Modifications:
     - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: isCentre
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -782083281874778831, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: buildUIObject
       value: 
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (11)
+      value: BuildPad - CR3L
+      objectReference: {fileID: 0}
+    - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4556,7 +4653,7 @@ PrefabInstance:
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (24)
+      value: BuildPad - LR2L
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4857,7 +4954,7 @@ PrefabInstance:
       objectReference: {fileID: 837794400305484424, guid: 34843e10bb6116c4982d9a9ec8b85789, type: 3}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_Name
-      value: BuildPad (29)
+      value: BuildPad - LR5R
       objectReference: {fileID: 0}
     - target: {fileID: 5074892596205662152, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_StaticEditorFlags

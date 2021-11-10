@@ -1,4 +1,5 @@
 //This class will handle creating and managing the GUID (Unique ID)
+//This probably doesn't need to be a mono behaviour, could just be a staic class
 
 using System;
 using System.Runtime.InteropServices;

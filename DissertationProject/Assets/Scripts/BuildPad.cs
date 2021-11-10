@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildPad : MonoBehaviour
 {
     public GameObject buildUIObject;
+    public bool isCentre = false;
 
     private void OnMouseUp()
     {
