@@ -13,6 +13,9 @@ public class ScoreManager : MonoBehaviour
     public TextMeshProUGUI livesText;
     public TextMeshProUGUI waveText;
 
+    //DEBUG
+    public bool canLose = true;
+
     AnalyticsManager analyticsManager;
     private void Start()
     {
@@ -69,9 +72,16 @@ public class ScoreManager : MonoBehaviour
 
     void gameOver()
     {
-        analyticsManager.sendLoseEvent();
-        Application.Quit();
-        //EditorApplication.isPlaying = false;        
+        if(canLose == true)
+        {
+            analyticsManager.sendLoseEvent();
+            Application.Quit();
+            EditorApplication.isPlaying = false;        
+        }
+        else
+        {
+            return;
+        }
     }
 
 }

@@ -1037,7 +1037,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &458899903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2585,6 +2585,7 @@ MonoBehaviour:
   moneyText: {fileID: 935790892}
   livesText: {fileID: 177767278}
   waveText: {fileID: 928481835}
+  canLose: 0
 --- !u!4 &984674558
 Transform:
   m_ObjectHideFlags: 0

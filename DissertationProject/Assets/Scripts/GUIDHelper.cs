@@ -47,6 +47,11 @@ public class GUIDHelper : MonoBehaviour, IGUIDInterface
         }
     }
 
+    public string getUIDAsString()
+    {
+        return uid.ToString();
+    }
+
     public void generateGUID() { }
 
 }

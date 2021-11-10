@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour
         else
         {
             //Debug.Log("pathNodeIndex: " + pathNodeIndex);
+            //Debug.Log("Length of pathObject: " + pathObject.transform.childCount);
             targetPathNode = pathObject.transform.GetChild(pathNodeIndex);
             pathNodeIndex++;
         }
@@ -39,6 +40,7 @@ public class Enemy : MonoBehaviour
         if(targetPathNode == null)
         {
             getNextPathNode();
+            return;
         }
 
         direction = targetPathNode.position - transform.localPosition;
@@ -80,6 +82,7 @@ public class Enemy : MonoBehaviour
 
     void reachedGoal()
     {
+        Debug.Log("Reached goal!");
         scoreManager.decrementLife(1);
         Destroy(gameObject);
     }

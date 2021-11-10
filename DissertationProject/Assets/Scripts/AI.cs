@@ -8,6 +8,7 @@ public class AI : MonoBehaviour
     public Enemy[] enemies;
     List<Tower> towers;
     ScoreManager scoreManager;
+    AnalyticsManager analyticsManager;
 
     //DEBUG COMMANDS
     public bool shouldDeleteTowers = false;
@@ -17,6 +18,7 @@ public class AI : MonoBehaviour
     {
         enemySpawner = GameObject.FindObjectOfType<EnemySpawner>();
         scoreManager = GameObject.FindObjectOfType<ScoreManager>();
+        analyticsManager = GameObject.FindObjectOfType<AnalyticsManager>();
         towers = new List<Tower>();
     }
 
@@ -50,7 +52,9 @@ public class AI : MonoBehaviour
             randomNumber = Random.Range(0, 11);
             if (randomNumber == 0)
             {
+                Debug.Log("Cheated by destorying tower");
                 destroyTower();
+                analyticsManager.sendCheatDestoryTowerEvent();
                 return;
             }
         }
@@ -60,7 +64,9 @@ public class AI : MonoBehaviour
             randomNumber = Random.Range(0, 1);
             if (randomNumber == 0)
             {
+                Debug.Log("Cheated by subtracting health");
                 subtractPlayerHealth();
+                analyticsManager.sendCheatHealthEvent();
                 return;
             }
         }
@@ -70,7 +76,9 @@ public class AI : MonoBehaviour
             randomNumber = Random.Range(0, 1);
             if (randomNumber == 0)
             {
+                Debug.Log("Cheated by subtracting money");
                 subtractPlayerMoney();
+                analyticsManager.sendCheatMoneyEvent();
                 return;
             }
         }
