@@ -77,7 +77,7 @@ public class ScoreManager : MonoBehaviour
         {
             analyticsManager.sendLoseEvent();
             Application.Quit();
-            EditorApplication.isPlaying = false;        
+            //EditorApplication.isPlaying = false;        
         }
         else
         {

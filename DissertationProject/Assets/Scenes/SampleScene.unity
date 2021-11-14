@@ -696,10 +696,10 @@ RectTransform:
   m_Father: {fileID: 596401269}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -34.420044}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0.877}
+  m_AnchorMax: {x: 0.105, y: 0.925}
+  m_AnchoredPosition: {x: 0, y: -0.5}
+  m_SizeDelta: {x: -2, y: -1}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &177767278
 MonoBehaviour:
@@ -4435,10 +4435,10 @@ RectTransform:
   m_Father: {fileID: 596401269}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.87}
-  m_AnchorMax: {x: 0.105, y: 0.925}
-  m_AnchoredPosition: {x: -3, y: 1.2001953}
-  m_SizeDelta: {x: -1, y: 1}
+  m_AnchorMin: {x: 0, y: 0.82}
+  m_AnchorMax: {x: 0.105, y: 0.877}
+  m_AnchoredPosition: {x: -5, y: -0.8999939}
+  m_SizeDelta: {x: 1, y: -1}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &928481835
 MonoBehaviour:
@@ -4523,7 +4523,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 5.5714264, y: 0, z: -3.0389862, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4569,10 +4569,10 @@ RectTransform:
   m_Father: {fileID: 596401269}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0.92}
+  m_AnchorMax: {x: 0.205, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &935790892
 MonoBehaviour:
@@ -4995,10 +4995,10 @@ MonoBehaviour:
   - {fileID: 2625101881963728552, guid: efed79563094a1445bf95a226c9d2134, type: 3}
   - {fileID: -3960103684415944211, guid: dc2528ce358a03d40b45c9f257799d87, type: 3}
   - {fileID: -3960103684415944211, guid: 8694c6fa69bfa244a9fd0b10b9c319a8, type: 3}
-  shouldDeleteTowers: 0
-  shouldDecrementHealth: 0
-  shouldDecrementMoney: 0
-  shouldDestoryCentreTowers: 0
+  shouldDeleteTowers: 1
+  shouldDecrementHealth: 1
+  shouldDecrementMoney: 1
+  shouldDestoryCentreTowers: 1
 --- !u!1001 &1002057569
 PrefabInstance:
   m_ObjectHideFlags: 0

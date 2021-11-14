@@ -16,6 +16,8 @@ public class AI : MonoBehaviour
     public bool shouldDecrementHealth = false;
     public bool shouldDecrementMoney = false;
     public bool shouldDestoryCentreTowers = false;
+
+    bool bHasDestroyedCentreTowers = false;
     private void Start()
     {
         enemySpawner = GameObject.FindObjectOfType<EnemySpawner>();
@@ -64,7 +66,7 @@ public class AI : MonoBehaviour
 
         if (shouldDecrementHealth == true)
         {
-            randomNumber = Random.Range(0, 1);
+            randomNumber = Random.Range(0, 11);
             if (randomNumber == 0)
             {
                 Debug.Log("Cheated by subtracting health");
@@ -76,7 +78,7 @@ public class AI : MonoBehaviour
 
         if (shouldDecrementMoney == true)
         {
-            randomNumber = Random.Range(0, 1);
+            randomNumber = Random.Range(0, 11);
             if (randomNumber == 0)
             {
                 Debug.Log("Cheated by subtracting money");
@@ -88,14 +90,19 @@ public class AI : MonoBehaviour
 
         if (shouldDestoryCentreTowers == true)
         {
-            randomNumber = Random.Range(0, 1);
-            if (randomNumber == 0)
+            randomNumber = Random.Range(0, 11);
+            if (randomNumber == 0 && bHasDestroyedCentreTowers == false)
             {
                 Debug.Log("Cheated by destorying centre towers");
                 for (int i = 0; i < centreTowers.Count; i++)
                 {
                     Destroy(centreTowers[i].gameObject);
                 }
+                bHasDestroyedCentreTowers = true;
+                return;
+            }
+            else
+            {
                 return;
             }
         }
