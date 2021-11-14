@@ -4,7 +4,7 @@ public class buildUIObject : MonoBehaviour
 {
     public Tower tower;
     Transform padTransform;
-    ScoreManager scoreManager;
+    public ScoreManager scoreManager;
     buildUIObjectParent parent;
     private void Start()
     {
@@ -29,6 +29,7 @@ public class buildUIObject : MonoBehaviour
             }
             Destroy(parent.getBuildPad().gameObject);
             Destroy(parent.gameObject);
+            scoreManager.setIsBuildMenuOpen(false);
         }
     }
 }

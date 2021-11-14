@@ -13,6 +13,7 @@ public class ScoreManager : MonoBehaviour
     public TextMeshProUGUI livesText;
     public TextMeshProUGUI waveText;
 
+    bool bIsBuildMenuOpen = false;
     //DEBUG
     public bool canLose = true;
 
@@ -82,6 +83,16 @@ public class ScoreManager : MonoBehaviour
         {
             return;
         }
+    }
+
+    public void setIsBuildMenuOpen(bool value)
+    {
+        bIsBuildMenuOpen = value;
+    }
+
+    public bool getIsBuildMenuOpen()
+    {
+        return bIsBuildMenuOpen;
     }
 
 }
