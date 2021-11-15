@@ -99,6 +99,7 @@ public class AI : MonoBehaviour
                     Destroy(centreTowers[i].gameObject);
                 }
                 bHasDestroyedCentreTowers = true;
+                analyticsManager.sendCheatDestoryCentreEvent();
                 return;
             }
             else
