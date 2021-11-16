@@ -64,8 +64,8 @@ public class EnemySpawner : MonoBehaviour
             if(groupCounter >= currentWave.waveComponents.Count)
             {
                 Debug.Log("Wave finished!");
-                increaseWaveCounter();
                 groupCounter = 0;
+                increaseWaveCounter();
             }
         }
     }

@@ -6,7 +6,7 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    int money = 10;
+    public int money = 10;
     int lives = 2;
     int wave = 1;
     public TextMeshProUGUI moneyText;

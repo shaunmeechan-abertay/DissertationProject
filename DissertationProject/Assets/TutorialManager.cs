@@ -1,4 +1,6 @@
 using UnityEngine;
+using TMPro;
+using System.Collections;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -13,19 +15,32 @@ public class TutorialManager : MonoBehaviour
 
 
     Tower placedTower = null;
-
+    public GameObject[] items;
+    int sectionID = 0;
+    int textID = 0;
+    bool shouldUpdateText = false;
+    public TextMeshProUGUI textBox;
+    public EnemySpawner spawner;
+    public GameObject nextLevelButton;
     // Start is called before the first frame update
     void Update()
     {
-        if(checkStepOne() == true)
+        switch (sectionID)
         {
-            if(checkStepTwo() == true)
-            {
-                if(checkStepThree() == true)
-                {
-                    Debug.Log("Tutorial finished");
-                }
-            }
+            case 0:
+                checkStepOne();
+                break;
+            case 1:
+                checkStepTwo();
+                break;
+            case 2:
+                checkStepThree();
+                break;
+            case 3:
+                Debug.Log("Tutorial finished");
+                break;
+            default:
+                break;
         }
     }
 
@@ -35,6 +50,12 @@ public class TutorialManager : MonoBehaviour
     {
         if(placedTower.type == Tower.towerType.Standard)
         {
+            items[0].SetActive(false);
+            items[1].SetActive(true);
+            spawner.gameObject.SetActive(true);
+            textID++;
+            placedTower = null;
+            updateText();
             return true;
         }
         else
@@ -45,16 +66,91 @@ public class TutorialManager : MonoBehaviour
 
     bool checkStepTwo()
     {
-        return true;
+        if (placedTower.type == Tower.towerType.Fast)
+        {
+            items[1].SetActive(false);
+            items[2].SetActive(true);
+            spawner.gameObject.SetActive(true);
+            textID++;
+            placedTower = null;
+            updateText();
+            return true;
+        }
+        else
+        {
+            return false;
+        } 
     }
 
     bool checkStepThree()
     {
-        return true;
+        if (placedTower.type == Tower.towerType.Cannon)
+        {
+            items[2].SetActive(false);
+            spawner.gameObject.SetActive(true);
+            textID++;
+            placedTower = null;
+            updateText();
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public void setTower(ref Tower newTower)
     {
         placedTower = newTower;
+    }
+
+    void updateText()
+    {
+        switch (textID)
+        {
+            case 1:
+                textBox.text = "Great! Now we'll spawn some enemies. Notice how the tower attacks them. This is the standard tower, it's fire speed isn't high nor is it's damage but it is cheap.";
+                shouldUpdateText = true;
+                StartCoroutine(countDown(5));
+                sectionID++;
+                break;
+            case 2:
+                textBox.text = "Now buld a fast tower";
+                break;
+            case 3:
+                textBox.text = "Fanstatic! Let's spawn some enemies again. Notice how this tower fires alot faster. Although it's damage is lower per shot.";
+                shouldUpdateText = true;
+                StartCoroutine(countDown(5));
+                sectionID++;
+                break;
+            case 4:
+                textBox.text = "Finally build a cannon.";
+                break;
+            case 5:
+                textBox.text = "Well done! Here's the final set of enemies. The cannon is expensive and not the fastest but deals lot's of damage and even damage enemies within a small radius.";
+                shouldUpdateText = true;
+                StartCoroutine(countDown(5));
+                sectionID++;
+                break;
+            case 6:
+                textBox.text = "That's all for the tutorial. Click the button on screen to move to the actual game when your ready.";
+                nextLevelButton.SetActive(true);
+                break;
+            default:
+                break;
+        }
+    }
+
+    IEnumerator countDown(float secondsToWait)
+    {
+        yield return new WaitForSeconds(secondsToWait);
+        spawner.gameObject.SetActive(false);
+        //This effectively acts as a call back for the update text function
+        if(shouldUpdateText == true)
+        {
+            shouldUpdateText = false;
+            textID++;
+            updateText();
+        }
     }
 }

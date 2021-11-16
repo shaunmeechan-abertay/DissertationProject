@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class buildUIObjectParent : MonoBehaviour
+public class buildUIObjectParentTutorial : MonoBehaviour
 {
     Transform padTransform;
     GameObject buildPad;
@@ -37,7 +37,7 @@ public class buildUIObjectParent : MonoBehaviour
             if (hit.collider == null)
             {
                 print("We hit something with no collider (e.g the ground)");
-                //Destroy(gameObject);
+                gameObject.SetActive(false);
                 scoreManager.setIsBuildMenuOpen(false);
                 return;
             }
@@ -45,7 +45,7 @@ public class buildUIObjectParent : MonoBehaviour
             //Clicked an enemy
             if (hit.collider.GetComponent<Enemy>().isActiveAndEnabled == true)
             {
-                //Destroy(gameObject);
+                gameObject.SetActive(false);
                 scoreManager.setIsBuildMenuOpen(false);
                 return;
             }
