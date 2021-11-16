@@ -102,6 +102,7 @@ MonoBehaviour:
   cost: 10
   damage: 5
   damageRadius: 10
+  type: 2
 --- !u!95 &6594173320458403464
 Animator:
   serializedVersion: 3

@@ -14,6 +14,14 @@ public class Tower : MonoBehaviour
     Animator animator;
     AudioSource audioSource;
     EnemySpawner enemySpawner;
+    public enum towerType
+    {
+        Standard,
+        Fast,
+        Cannon
+    }
+
+    public towerType type;
     // Start is called before the first frame update
     void Start()
     {
