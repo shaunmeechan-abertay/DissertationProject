@@ -19,9 +19,14 @@ public class buildUIObject : MonoBehaviour
         {
             padTransform = parent.getBuildPadTransform();
             GameObject newTower = Instantiate(tower.gameObject, padTransform.position, padTransform.rotation);
-            if(parent.getBuildPad().GetComponent<BuildPad>().isCentre == true)
+            BuildPad buildPad = parent.getBuildPad().GetComponent<BuildPad>();
+            if (buildPad.isCentre == true && buildPad.isDestroyable == false)
             {
                 GameObject.FindObjectOfType<AI>().addCentreTower(newTower.GetComponent<Tower>());
+            }
+            else if(parent.getBuildPad().GetComponent<BuildPad>().isDestroyable == true)
+            {
+                GameObject.FindObjectOfType<AI>().addTowersInPath(newTower.GetComponent<Tower>());
             }
             else
             {

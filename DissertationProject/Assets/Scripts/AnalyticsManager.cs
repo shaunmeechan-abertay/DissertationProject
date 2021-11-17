@@ -80,6 +80,17 @@ public class AnalyticsManager : MonoBehaviour
         Debug.Log("Analytics result: " + analyticsResult);
     }
 
+    public void sendCheatCreatedNewPathEvent()
+    {
+        if(UID == null)
+        {
+            getUID();
+        }
+
+        AnalyticsResult analyticsResult = Analytics.CustomEvent("AI cheated by creating a new path: " + UID);
+        Debug.Log("Analytics result: " + analyticsResult);
+    }
+
     void getUID()
     {
        UID = gUIDHelper.getUIDAsString();

@@ -5,6 +5,7 @@ public class BuildPad : MonoBehaviour
     public GameObject buildUIObject;
     public ScoreManager scoreManager;
     public bool isCentre = false;
+    public bool isDestroyable = false;
 
     private void OnMouseUp()
     {

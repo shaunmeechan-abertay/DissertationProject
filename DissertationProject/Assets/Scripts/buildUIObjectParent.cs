@@ -37,7 +37,7 @@ public class buildUIObjectParent : MonoBehaviour
             if (hit.collider == null)
             {
                 print("We hit something with no collider (e.g the ground)");
-                //Destroy(gameObject);
+                Destroy(gameObject);
                 scoreManager.setIsBuildMenuOpen(false);
                 return;
             }

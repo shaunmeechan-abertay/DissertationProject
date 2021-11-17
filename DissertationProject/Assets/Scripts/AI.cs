@@ -8,14 +8,19 @@ public class AI : MonoBehaviour
     public Enemy[] enemies;
     List<Tower> towers;
     List<Tower> centreTowers;
+    List<Tower> towersInPath;
     ScoreManager scoreManager;
     AnalyticsManager analyticsManager;
-
+    public GameObject originalPath;
+    public GameObject cheatedPath;
+    public GameObject[] destroyableGroundSprites;
+    public GameObject[] destroyableBuildPads;
     //DEBUG COMMANDS
     public bool shouldDeleteTowers = false;
     public bool shouldDecrementHealth = false;
     public bool shouldDecrementMoney = false;
     public bool shouldDestoryCentreTowers = false;
+    public bool shouldCreateNewPath = false;
 
     bool bHasDestroyedCentreTowers = false;
     private void Start()
@@ -25,6 +30,7 @@ public class AI : MonoBehaviour
         analyticsManager = GameObject.FindObjectOfType<AnalyticsManager>();
         towers = new List<Tower>();
         centreTowers = new List<Tower>();
+        towersInPath = new List<Tower>();
     }
 
     public void spawnNewWave()
@@ -107,6 +113,34 @@ public class AI : MonoBehaviour
                 return;
             }
         }
+
+        if (shouldCreateNewPath == true)
+        {
+            Destroy(originalPath);
+            cheatedPath.name = "Path";
+            for (int i = 0; i < destroyableGroundSprites.Length; i++)
+            {
+                if(destroyableGroundSprites[i] != null)
+                {
+                    Destroy(destroyableGroundSprites[i]);
+                }
+            }
+            for (int i = 0; i < destroyableBuildPads.Length; i++)
+            {
+                if(destroyableBuildPads[i] != null)
+                {
+                    Destroy(destroyableBuildPads[i]);
+                }
+            }
+
+            for (int i = 0; i < towersInPath.Count; i++)
+            {
+                Destroy(towersInPath[i].gameObject);
+                towersInPath.RemoveAt(i);
+            }
+
+            analyticsManager.sendCheatCreatedNewPathEvent();
+        }
     }
 
     public void addTower(Tower newTower)
@@ -117,6 +151,11 @@ public class AI : MonoBehaviour
     public void addCentreTower(Tower newTower)
     {
         centreTowers.Add(newTower);
+    }
+
+    public void addTowersInPath(Tower newTower)
+    {
+        towersInPath.Add(newTower);
     }
 
     public int getTowersCount()
