@@ -5103,6 +5103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 10
+  lives: 10
   moneyText: {fileID: 935790892}
   livesText: {fileID: 177767278}
   waveText: {fileID: 928481835}

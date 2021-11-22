@@ -7,7 +7,7 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     public int money = 10;
-    int lives = 2;
+    public int lives = 10;
     int wave = 1;
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI livesText;

@@ -22,6 +22,9 @@ public class AI : MonoBehaviour
     public bool shouldDestoryCentreTowers = false;
     public bool shouldCreateNewPath = false;
 
+    //Start at 3 as the first 2 waves are defined in the inspector
+    int waveCounter = 1;
+
     bool bHasDestroyedCentreTowers = false;
     private void Start()
     {
@@ -44,12 +47,14 @@ public class AI : MonoBehaviour
         int enemyToUse = Random.Range(0, enemies.Length);
         waveComponent.enemyPrefab = enemies[enemyToUse].gameObject;
 
-        waveComponent.num = Random.Range(1,10);
+        waveComponent.num = Random.Range(1,9);
 
         waveComponentArray[0] = waveComponent;
 
         scoreManager.incrementWaveCounter();
         enemySpawner.createWave(waveComponentArray);
+
+        waveCounter++;
 
         cheat();
     }
@@ -57,90 +62,123 @@ public class AI : MonoBehaviour
     //This function will randomly cheat when a new wave is created
     void cheat()
     {
-        int randomNumber = 0;
-        if (shouldDeleteTowers == true)
+        switch (waveCounter)
         {
-            randomNumber = Random.Range(0, 11);
-            if (randomNumber == 0)
-            {
-                Debug.Log("Cheated by destorying tower");
-                destroyTower();
-                analyticsManager.sendCheatDestoryTowerEvent();
-                return;
-            }
-        }
-
-        if (shouldDecrementHealth == true)
-        {
-            randomNumber = Random.Range(0, 11);
-            if (randomNumber == 0)
-            {
-                Debug.Log("Cheated by subtracting health");
-                subtractPlayerHealth();
-                analyticsManager.sendCheatHealthEvent();
-                return;
-            }
-        }
-
-        if (shouldDecrementMoney == true)
-        {
-            randomNumber = Random.Range(0, 11);
-            if (randomNumber == 0)
-            {
-                Debug.Log("Cheated by subtracting money");
+            case 3:
                 subtractPlayerMoney();
-                analyticsManager.sendCheatMoneyEvent();
-                return;
-            }
+                break;
+            case 4:
+                subtractPlayerMoney();
+                break;
+            case 5:
+                destroyTower();
+                break;
+            case 6:
+                destroyTower();
+                break;
+            case 7:
+                subtractPlayerHealth();
+                break;
+            case 8:
+                subtractPlayerMoney();
+                break;
+            case 9:
+                createNewPath();
+                break;
+            case 10:
+                destroyCentreTowers();
+                break;
+            case 11:
+                destroyTowers(0.5f);
+                break;
+            default:
+                Debug.LogError("ERROR: waveCounter was not valid for switch statement.");
+                break;
         }
+        //int randomNumber = 0;
+        //if (shouldDeleteTowers == true)
+        //{
+        //    randomNumber = Random.Range(0, 11);
+        //    if (randomNumber == 0)
+        //    {
+        //        Debug.Log("Cheated by destorying tower");
+        //        destroyTower();
+        //        analyticsManager.sendCheatDestoryTowerEvent();
+        //        return;
+        //    }
+        //}
 
-        if (shouldDestoryCentreTowers == true)
-        {
-            randomNumber = Random.Range(0, 11);
-            if (randomNumber == 0 && bHasDestroyedCentreTowers == false)
-            {
-                Debug.Log("Cheated by destorying centre towers");
-                for (int i = 0; i < centreTowers.Count; i++)
-                {
-                    Destroy(centreTowers[i].gameObject);
-                }
-                bHasDestroyedCentreTowers = true;
-                analyticsManager.sendCheatDestoryCentreEvent();
-                return;
-            }
-            else
-            {
-                return;
-            }
-        }
+        //if (shouldDecrementHealth == true)
+        //{
+        //    randomNumber = Random.Range(0, 11);
+        //    if (randomNumber == 0)
+        //    {
+        //        Debug.Log("Cheated by subtracting health");
+        //        subtractPlayerHealth();
+        //        analyticsManager.sendCheatHealthEvent();
+        //        return;
+        //    }
+        //}
 
-        if (shouldCreateNewPath == true)
-        {
-            Destroy(originalPath);
-            cheatedPath.name = "Path";
-            for (int i = 0; i < destroyableGroundSprites.Length; i++)
-            {
-                if(destroyableGroundSprites[i] != null)
-                {
-                    Destroy(destroyableGroundSprites[i]);
-                }
-            }
-            for (int i = 0; i < destroyableBuildPads.Length; i++)
-            {
-                if(destroyableBuildPads[i] != null)
-                {
-                    Destroy(destroyableBuildPads[i]);
-                }
-            }
+        //if (shouldDecrementMoney == true)
+        //{
+        //    randomNumber = Random.Range(0, 11);
+        //    if (randomNumber == 0)
+        //    {
+        //        Debug.Log("Cheated by subtracting money");
+        //        subtractPlayerMoney();
+        //        analyticsManager.sendCheatMoneyEvent();
+        //        return;
+        //    }
+        //}
 
-            for (int i = 0; i < towersInPath.Count; i++)
-            {
-                Destroy(towersInPath[i].gameObject);
-                towersInPath.RemoveAt(i);
-            }
+        //if (shouldDestoryCentreTowers == true)
+        //{
+        //    randomNumber = Random.Range(0, 11);
+        //    if (randomNumber == 0 && bHasDestroyedCentreTowers == false)
+        //    {
+        //        Debug.Log("Cheated by destorying centre towers");
+        //        for (int i = 0; i < centreTowers.Count; i++)
+        //        {
+        //            Destroy(centreTowers[i].gameObject);
+        //        }
+        //        bHasDestroyedCentreTowers = true;
+        //        analyticsManager.sendCheatDestoryCentreEvent();
+        //        return;
+        //    }
+        //    else
+        //    {
+        //        return;
+        //    }
+        //}
 
-            analyticsManager.sendCheatCreatedNewPathEvent();
-        }
+        //if (shouldCreateNewPath == true)
+        //{
+        //    Destroy(originalPath);
+        //    cheatedPath.name = "Path";
+        //    for (int i = 0; i < destroyableGroundSprites.Length; i++)
+        //    {
+        //        if(destroyableGroundSprites[i] != null)
+        //        {
+        //            Destroy(destroyableGroundSprites[i]);
+        //        }
+        //    }
+        //    for (int i = 0; i < destroyableBuildPads.Length; i++)
+        //    {
+        //        if(destroyableBuildPads[i] != null)
+        //        {
+        //            Destroy(destroyableBuildPads[i]);
+        //        }
+        //    }
+
+        //    for (int i = 0; i < towersInPath.Count; i++)
+        //    {
+        //        Destroy(towersInPath[i].gameObject);
+        //        towersInPath.RemoveAt(i);
+        //    }
+
+        //    analyticsManager.sendCheatCreatedNewPathEvent();
+        //}
     }
 
     public void addTower(Tower newTower)
@@ -178,6 +216,32 @@ public class AI : MonoBehaviour
 
     }
 
+    void destroyTowers(float count)
+    {
+        Tower[] towers = GameObject.FindObjectsOfType<Tower>();
+        if(count == 0.5f)
+        {
+            for (int i = 0; i < towers.Length/2; i++)
+            {
+                Destroy(towers[i].gameObject);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < count; i++)
+            {
+                if(towers[i] != null)
+                {
+                    Destroy(towers[i].gameObject);
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+    }
+
     public void subtractPlayerHealth()
     {
         scoreManager.decrementLife();
@@ -186,5 +250,49 @@ public class AI : MonoBehaviour
     public void subtractPlayerMoney()
     {
         scoreManager.decrementMoney(5);
+    }
+
+    void destroyCentreTowers()
+    {
+        Debug.Log("Cheated by destorying centre towers");
+        for (int i = 0; i < centreTowers.Count; i++)
+        {
+            Destroy(centreTowers[i].gameObject);
+        }
+        bHasDestroyedCentreTowers = true;
+        analyticsManager.sendCheatDestoryCentreEvent();
+    }
+
+    void createNewPath()
+    {
+        Destroy(originalPath);
+        cheatedPath.name = "Path";
+        for (int i = 0; i < destroyableGroundSprites.Length; i++)
+        {
+            if (destroyableGroundSprites[i] != null)
+            {
+                Destroy(destroyableGroundSprites[i]);
+            }
+        }
+        for (int i = 0; i < destroyableBuildPads.Length; i++)
+        {
+            if (destroyableBuildPads[i] != null)
+            {
+                Destroy(destroyableBuildPads[i]);
+            }
+        }
+
+        for (int i = 0; i < towersInPath.Count; i++)
+        {
+            Destroy(towersInPath[i].gameObject);
+            towersInPath.RemoveAt(i);
+        }
+
+        Enemy[] enemies = GameObject.FindObjectsOfType<Enemy>();
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            Destroy(enemies[i].gameObject);
+        }
+        analyticsManager.sendCheatCreatedNewPathEvent();
     }
 }
