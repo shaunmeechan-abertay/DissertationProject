@@ -15,6 +15,7 @@ public class AI : MonoBehaviour
     public GameObject cheatedPath;
     public GameObject[] destroyableGroundSprites;
     public GameObject[] destroyableBuildPads;
+    public bool bCanPlayAudio = true;
     //DEBUG COMMANDS
     public bool shouldDeleteTowers = false;
     public bool shouldDecrementHealth = false;
@@ -34,6 +35,28 @@ public class AI : MonoBehaviour
         towers = new List<Tower>();
         centreTowers = new List<Tower>();
         towersInPath = new List<Tower>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            bCanPlayAudio = !bCanPlayAudio;
+            for (int i = 0; i < towers.Count; i++)
+            {
+                towers[i].bCanPlayAudio = bCanPlayAudio;
+            }
+
+            for (int i = 0; i < centreTowers.Count; i++)
+            {
+                centreTowers[i].bCanPlayAudio = bCanPlayAudio;
+            }
+
+            for (int i = 0; i < towersInPath.Count; i++)
+            {
+                towersInPath[i].bCanPlayAudio = bCanPlayAudio;
+            }
+        }
     }
 
     public void spawnNewWave()
@@ -254,11 +277,11 @@ public class AI : MonoBehaviour
 
     void destroyCentreTowers()
     {
-        Debug.Log("Cheated by destorying centre towers");
         for (int i = 0; i < centreTowers.Count; i++)
         {
             Destroy(centreTowers[i].gameObject);
         }
+            centreTowers.Clear();
         bHasDestroyedCentreTowers = true;
         analyticsManager.sendCheatDestoryCentreEvent();
     }
@@ -285,8 +308,8 @@ public class AI : MonoBehaviour
         for (int i = 0; i < towersInPath.Count; i++)
         {
             Destroy(towersInPath[i].gameObject);
-            towersInPath.RemoveAt(i);
         }
+        towersInPath.Clear();
 
         Enemy[] enemies = GameObject.FindObjectsOfType<Enemy>();
         for (int i = 0; i < enemies.Length; i++)

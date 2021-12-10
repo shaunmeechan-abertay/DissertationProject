@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class ScoreManager : MonoBehaviour
@@ -25,6 +23,7 @@ public class ScoreManager : MonoBehaviour
         waveText.text = "Wave:" + wave.ToString();
         analyticsManager = GameObject.FindObjectOfType<AnalyticsManager>();
     }
+
     public void decrementLife(int l = 1)
     {
         lives -= l;
@@ -76,7 +75,8 @@ public class ScoreManager : MonoBehaviour
         if(canLose == true)
         {
             analyticsManager.sendLoseEvent();
-            Application.Quit();
+            SceneManager.LoadScene(2);
+            //Application.Quit();
             //EditorApplication.isPlaying = false;        
         }
         else

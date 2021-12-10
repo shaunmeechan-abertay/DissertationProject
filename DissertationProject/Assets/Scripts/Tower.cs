@@ -13,7 +13,7 @@ public class Tower : MonoBehaviour
     public float damageRadius = 0.0f;
     Animator animator;
     AudioSource audioSource;
-    EnemySpawner enemySpawner;
+    public bool bCanPlayAudio = true;
     public enum towerType
     {
         Standard,
@@ -27,7 +27,7 @@ public class Tower : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-        enemySpawner = GameObject.FindObjectOfType<EnemySpawner>();
+        bCanPlayAudio = GameObject.Find("GameManager").GetComponent<AI>().bCanPlayAudio;
     }
 
     // Update is called once per frame
@@ -89,6 +89,9 @@ public class Tower : MonoBehaviour
         bullet.radius = damageRadius;
         bullet.target = e.transform;
         animator.SetBool("canFire", true);
-        audioSource.PlayOneShot(audioSource.clip);
+        if(bCanPlayAudio == true)
+        {
+            audioSource.PlayOneShot(audioSource.clip);
+        }
     }
 }
