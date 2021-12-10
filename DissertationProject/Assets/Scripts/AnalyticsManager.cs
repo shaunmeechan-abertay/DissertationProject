@@ -91,6 +91,28 @@ public class AnalyticsManager : MonoBehaviour
         Debug.Log("Analytics result: " + analyticsResult);
     }
 
+    public void sendCheatDestroyedAllBuildPads()
+    {
+        if(UID == null)
+        {
+            getUID();
+        }
+
+        AnalyticsResult analyticsResult = Analytics.CustomEvent("AI cheated by Destroying all Buildpads: " + UID);
+        Debug.Log("Analytics result: " + analyticsResult);
+    }
+
+    public void sendCheatDestroyedHalfOfTowers()
+    {
+        if(UID == null)
+        {
+            getUID();
+        }
+
+        AnalyticsResult analyticsResult = Analytics.CustomEvent("AI cheated by Destroying half of the towers: " + UID);
+        Debug.Log("Analytics result: " + analyticsResult);
+    }
+
     void getUID()
     {
        UID = gUIDHelper.getUIDAsString();

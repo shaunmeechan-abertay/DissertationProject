@@ -16,12 +16,13 @@ public class AI : MonoBehaviour
     public GameObject[] destroyableGroundSprites;
     public GameObject[] destroyableBuildPads;
     public bool bCanPlayAudio = true;
-    //DEBUG COMMANDS
-    public bool shouldDeleteTowers = false;
-    public bool shouldDecrementHealth = false;
-    public bool shouldDecrementMoney = false;
-    public bool shouldDestoryCentreTowers = false;
-    public bool shouldCreateNewPath = false;
+    //DEBUG COMMANDS - Should be true so the AI can cheat in normal gameplay
+    //but in editor can be changed as needed
+    public bool shouldDeleteTowers = true;
+    public bool shouldDecrementHealth = true;
+    public bool shouldDecrementMoney = true;
+    public bool shouldDestoryCentreTowers = true;
+    public bool shouldCreateNewPath = true;
 
     //Start at 3 as the first 2 waves are defined in the inspector
     int waveCounter = 1;
@@ -114,94 +115,13 @@ public class AI : MonoBehaviour
             case 11:
                 destroyTowers(0.5f);
                 break;
+            case 12:
+                destroyAllBuildPads();
+                break;
             default:
                 Debug.LogError("ERROR: waveCounter was not valid for switch statement.");
                 break;
         }
-        //int randomNumber = 0;
-        //if (shouldDeleteTowers == true)
-        //{
-        //    randomNumber = Random.Range(0, 11);
-        //    if (randomNumber == 0)
-        //    {
-        //        Debug.Log("Cheated by destorying tower");
-        //        destroyTower();
-        //        analyticsManager.sendCheatDestoryTowerEvent();
-        //        return;
-        //    }
-        //}
-
-        //if (shouldDecrementHealth == true)
-        //{
-        //    randomNumber = Random.Range(0, 11);
-        //    if (randomNumber == 0)
-        //    {
-        //        Debug.Log("Cheated by subtracting health");
-        //        subtractPlayerHealth();
-        //        analyticsManager.sendCheatHealthEvent();
-        //        return;
-        //    }
-        //}
-
-        //if (shouldDecrementMoney == true)
-        //{
-        //    randomNumber = Random.Range(0, 11);
-        //    if (randomNumber == 0)
-        //    {
-        //        Debug.Log("Cheated by subtracting money");
-        //        subtractPlayerMoney();
-        //        analyticsManager.sendCheatMoneyEvent();
-        //        return;
-        //    }
-        //}
-
-        //if (shouldDestoryCentreTowers == true)
-        //{
-        //    randomNumber = Random.Range(0, 11);
-        //    if (randomNumber == 0 && bHasDestroyedCentreTowers == false)
-        //    {
-        //        Debug.Log("Cheated by destorying centre towers");
-        //        for (int i = 0; i < centreTowers.Count; i++)
-        //        {
-        //            Destroy(centreTowers[i].gameObject);
-        //        }
-        //        bHasDestroyedCentreTowers = true;
-        //        analyticsManager.sendCheatDestoryCentreEvent();
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        return;
-        //    }
-        //}
-
-        //if (shouldCreateNewPath == true)
-        //{
-        //    Destroy(originalPath);
-        //    cheatedPath.name = "Path";
-        //    for (int i = 0; i < destroyableGroundSprites.Length; i++)
-        //    {
-        //        if(destroyableGroundSprites[i] != null)
-        //        {
-        //            Destroy(destroyableGroundSprites[i]);
-        //        }
-        //    }
-        //    for (int i = 0; i < destroyableBuildPads.Length; i++)
-        //    {
-        //        if(destroyableBuildPads[i] != null)
-        //        {
-        //            Destroy(destroyableBuildPads[i]);
-        //        }
-        //    }
-
-        //    for (int i = 0; i < towersInPath.Count; i++)
-        //    {
-        //        Destroy(towersInPath[i].gameObject);
-        //        towersInPath.RemoveAt(i);
-        //    }
-
-        //    analyticsManager.sendCheatCreatedNewPathEvent();
-        //}
     }
 
     public void addTower(Tower newTower)
@@ -239,6 +159,18 @@ public class AI : MonoBehaviour
 
     }
 
+    void destroyAllBuildPads()
+    {
+        for (int i = 0; i < destroyableBuildPads.Length; i++)
+        {
+            Destroy(destroyableBuildPads[i]);
+        }
+
+        analyticsManager.sendCheatDestroyedAllBuildPads();
+    }
+
+    //Function to destroy x towers.
+    //Use 0.5f to destroy the first half of the towers placed
     void destroyTowers(float count)
     {
         Tower[] towers = GameObject.FindObjectsOfType<Tower>();
@@ -248,6 +180,7 @@ public class AI : MonoBehaviour
             {
                 Destroy(towers[i].gameObject);
             }
+            analyticsManager.sendCheatDestroyedHalfOfTowers();
         }
         else
         {
@@ -297,13 +230,9 @@ public class AI : MonoBehaviour
                 Destroy(destroyableGroundSprites[i]);
             }
         }
-        for (int i = 0; i < destroyableBuildPads.Length; i++)
-        {
-            if (destroyableBuildPads[i] != null)
-            {
-                Destroy(destroyableBuildPads[i]);
-            }
-        }
+
+        Destroy(destroyableBuildPads[0]);
+        Destroy(destroyableBuildPads[1]);
 
         for (int i = 0; i < towersInPath.Count; i++)
         {
