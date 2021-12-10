@@ -8,6 +8,7 @@ public class BuildingManager : MonoBehaviour
 
     public void setTowerType(Tower prefab)
     {
+        Debug.Log("Bulding manager called!");
         selectedTower = prefab;
     }
 }

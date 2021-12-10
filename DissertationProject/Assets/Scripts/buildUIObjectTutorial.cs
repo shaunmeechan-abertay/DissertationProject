@@ -20,14 +20,8 @@ public class buildUIObjectTutorial : MonoBehaviour
             padTransform = parent.getBuildPadTransform();
             GameObject newTower = Instantiate(tower.gameObject, padTransform.position, padTransform.rotation);
             Tower towerComponent = newTower.GetComponent<Tower>();
-            if (parent.getBuildPad().GetComponent<BuildPadTutorial>().isCentre == true)
-            {
-                GameObject.FindObjectOfType<TutorialManager>().setTower(ref towerComponent);
-            }
-            else
-            {
-                GameObject.FindObjectOfType<TutorialManager>().setTower(ref towerComponent );
-            }
+            GameObject.FindObjectOfType<TutorialManager>().setTower(ref towerComponent);
+            Debug.Log("Player placed a tower!");
             Destroy(parent.getBuildPad().gameObject);
             //Destroy(parent.gameObject);
             parent.gameObject.SetActive(false);

@@ -23,6 +23,16 @@ public class TutorialManager : MonoBehaviour
     public EnemySpawner spawner;
     public GameObject nextLevelButton;
     // Start is called before the first frame update
+
+    private void Start()
+    {
+        if(Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            placedTower.type = Tower.towerType.Cannon;
+            Debug.Log("As running on Web faking the tower type!");
+        }
+    }
+
     void Update()
     {
         switch (sectionID)
@@ -50,6 +60,8 @@ public class TutorialManager : MonoBehaviour
     {
         if(placedTower.type == Tower.towerType.Standard)
         {
+            Debug.Log("Finished step one!");
+            Debug.Log("placed tower type: " + placedTower.type);
             items[0].SetActive(false);
             items[1].SetActive(true);
             spawner.gameObject.SetActive(true);
@@ -73,6 +85,11 @@ public class TutorialManager : MonoBehaviour
             spawner.gameObject.SetActive(true);
             textID++;
             placedTower = null;
+            if (Application.platform == RuntimePlatform.WebGLPlayer)
+            {
+                placedTower.type = Tower.towerType.Fast;
+                Debug.Log("As running on Web faking the tower type!");
+            }
             updateText();
             return true;
         }
@@ -101,6 +118,7 @@ public class TutorialManager : MonoBehaviour
 
     public void setTower(ref Tower newTower)
     {
+        Debug.Log("Set tower in tutorial manager called");
         placedTower = newTower;
     }
 
