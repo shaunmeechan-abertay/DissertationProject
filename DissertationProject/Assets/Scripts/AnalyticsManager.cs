@@ -2,19 +2,24 @@
 
 using UnityEngine;
 using UnityEngine.Analytics;
-using System;
+
+//TODO: Add the ability to not send analytics when in Unity editor
 
 public class AnalyticsManager : MonoBehaviour
 {
     GUIDHelper gUIDHelper;
     string UID;
-
+    public bool bShouldSendAnalytics = true;
     private void Start()
     {
         gUIDHelper = GameObject.FindObjectOfType<GUIDHelper>();
     }
     public void sendWinEvent()
     {
+        if(bShouldSendAnalytics == false)
+        {
+            return;
+        }
         //Check if the UID is null
         if(UID == null)
         {
@@ -27,6 +32,11 @@ public class AnalyticsManager : MonoBehaviour
 
     public void sendLoseEvent()
     {
+        if (bShouldSendAnalytics == false)
+        {
+            return;
+        }
+
         if (UID == null)
         {
             getUID();
@@ -38,7 +48,12 @@ public class AnalyticsManager : MonoBehaviour
 
     public void sendCheatHealthEvent()
     {
-        if(UID == null)
+        if (bShouldSendAnalytics == false)
+        {
+            return;
+        }
+
+        if (UID == null)
         {
             getUID();
         }
@@ -49,7 +64,12 @@ public class AnalyticsManager : MonoBehaviour
     
     public void sendCheatMoneyEvent()
     {
-        if(UID == null)
+        if (bShouldSendAnalytics == false)
+        {
+            return;
+        }
+
+        if (UID == null)
         {
             getUID();
         }
@@ -60,7 +80,12 @@ public class AnalyticsManager : MonoBehaviour
     
     public void sendCheatDestoryTowerEvent()
     {
-        if(UID == null)
+        if (bShouldSendAnalytics == false)
+        {
+            return;
+        }
+
+        if (UID == null)
         {
             getUID();
         }
@@ -71,7 +96,12 @@ public class AnalyticsManager : MonoBehaviour
 
     public void sendCheatDestoryCentreEvent()
     {
-        if(UID == null)
+        if (bShouldSendAnalytics == false)
+        {
+            return;
+        }
+
+        if (UID == null)
         {
             getUID();
         }
@@ -82,7 +112,12 @@ public class AnalyticsManager : MonoBehaviour
 
     public void sendCheatCreatedNewPathEvent()
     {
-        if(UID == null)
+        if (bShouldSendAnalytics == false)
+        {
+            return;
+        }
+
+        if (UID == null)
         {
             getUID();
         }
@@ -93,7 +128,12 @@ public class AnalyticsManager : MonoBehaviour
 
     public void sendCheatDestroyedAllBuildPads()
     {
-        if(UID == null)
+        if (bShouldSendAnalytics == false)
+        {
+            return;
+        }
+
+        if (UID == null)
         {
             getUID();
         }
@@ -104,7 +144,12 @@ public class AnalyticsManager : MonoBehaviour
 
     public void sendCheatDestroyedHalfOfTowers()
     {
-        if(UID == null)
+        if (bShouldSendAnalytics == false)
+        {
+            return;
+        }
+
+        if (UID == null)
         {
             getUID();
         }

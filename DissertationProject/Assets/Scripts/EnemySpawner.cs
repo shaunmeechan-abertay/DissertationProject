@@ -8,7 +8,9 @@ public class EnemySpawner : MonoBehaviour
     float spawnCooldownleft = 0.0f;
     int waveCounter = 0;
     int groupCounter = 0;
-    int healthScale = 1;
+    float healthScale = 0.4f;
+    public bool bInbetweenWaves = true;
+    public GameObject inbetweenWaveUI;
 
     AnalyticsManager analyticsManager;
     AI ai;
@@ -39,7 +41,7 @@ public class EnemySpawner : MonoBehaviour
         spawnCooldownleft -= Time.deltaTime;
         Waves currentWave = wavesList[0];
 
-        if(spawnCooldownleft < 0 && wavesList.Count != 0)
+        if(spawnCooldownleft < 0 && wavesList.Count != 0 && bInbetweenWaves == false)
         {
             spawnCooldownleft = spawnCooldown;
 
@@ -72,14 +74,14 @@ public class EnemySpawner : MonoBehaviour
 
     void increaseWaveCounter()
     {
+        bInbetweenWaves = true;
+        inbetweenWaveUI.SetActive(true);
         waveCounter++;
         wavesList.RemoveAt(0);
         if(waveCounter > wavesList.Count - 1)
         {
             Debug.Log("Ran out of wave. Adding another...");
             ai.spawnNewWave();
-            //analyticsManager.sendWinEvent();
-            //Destroy(gameObject);
         }
     }
 
@@ -94,5 +96,10 @@ public class EnemySpawner : MonoBehaviour
         }
         wavesList.Add(newWave);
         healthScale += 1;
+    }
+
+    public void setBInbetweenWaves(bool value)
+    {
+        bInbetweenWaves = value;
     }
 }
