@@ -71,7 +71,7 @@ public class AI : MonoBehaviour
         int enemyToUse = Random.Range(0, enemies.Length);
         waveComponent.enemyPrefab = enemies[enemyToUse].gameObject;
 
-        waveComponent.num = Random.Range(1,9);
+        waveComponent.num = Random.Range(1,8);
 
         waveComponentArray[0] = waveComponent;
 
@@ -92,7 +92,6 @@ public class AI : MonoBehaviour
                 subtractPlayerMoney();
                 break;
             case 4:
-                subtractPlayerMoney();
                 break;
             case 5:
                 destroyTower();
