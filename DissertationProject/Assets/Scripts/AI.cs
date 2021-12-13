@@ -118,7 +118,7 @@ public class AI : MonoBehaviour
                 destroyAllBuildPads();
                 break;
             default:
-                Debug.LogError("ERROR: waveCounter was not valid for switch statement.");
+                //Debug.LogError("ERROR: waveCounter was not valid for switch statement.");
                 break;
         }
     }

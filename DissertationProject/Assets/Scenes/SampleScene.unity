@@ -1941,7 +1941,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This is some text
+  m_text: Welcome to the main game! Press the next wave button when you are ready.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6178,19 +6178,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bInbetweenWaves: 1
   inbetweenWaveUI: {fileID: 861760790}
+  inbetweenWaveText: {fileID: 467058553}
+  waveCounterText: {fileID: 928481835}
   wavesList:
   - waveComponents:
     - enemyPrefab: {fileID: 7548048615654997444, guid: efed79563094a1445bf95a226c9d2134, type: 3}
-      num: 2
+      num: 10
     - enemyPrefab: {fileID: 7548048615654997444, guid: dc2528ce358a03d40b45c9f257799d87, type: 3}
       num: 1
     - enemyPrefab: {fileID: 7548048615654997444, guid: 8694c6fa69bfa244a9fd0b10b9c319a8, type: 3}
       num: 1
   - waveComponents:
-    - enemyPrefab: {fileID: 7548048615654997444, guid: efed79563094a1445bf95a226c9d2134, type: 3}
-      num: 3
+    - enemyPrefab: {fileID: 7548048615654997444, guid: 8694c6fa69bfa244a9fd0b10b9c319a8, type: 3}
+      num: 8
+  - waveComponents:
     - enemyPrefab: {fileID: 7548048615654997444, guid: dc2528ce358a03d40b45c9f257799d87, type: 3}
-      num: 2
+      num: 10
+  - waveComponents:
+    - enemyPrefab: {fileID: 7548048615654997444, guid: dc2528ce358a03d40b45c9f257799d87, type: 3}
+      num: 10
+    - enemyPrefab: {fileID: 7548048615654997444, guid: efed79563094a1445bf95a226c9d2134, type: 3}
+      num: 10
+    - enemyPrefab: {fileID: 7548048615654997444, guid: 8694c6fa69bfa244a9fd0b10b9c319a8, type: 3}
+      num: 10
+  - waveComponents:
+    - enemyPrefab: {fileID: 7548048615654997444, guid: efed79563094a1445bf95a226c9d2134, type: 3}
+      num: 15
+  - waveComponents:
+    - enemyPrefab: {fileID: 7548048615654997444, guid: 8694c6fa69bfa244a9fd0b10b9c319a8, type: 3}
+      num: 15
 --- !u!4 &1323887643
 Transform:
   m_ObjectHideFlags: 0

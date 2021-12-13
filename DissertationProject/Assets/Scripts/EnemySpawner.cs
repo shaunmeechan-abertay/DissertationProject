@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
     float spawnCooldown = 1.0f;
     float spawnCooldownleft = 0.0f;
-    int waveCounter = 0;
+    int waveCounter = 1;
     int groupCounter = 0;
-    float healthScale = 0.4f;
+    float healthScale = 0.5f;
     public bool bInbetweenWaves = true;
     public GameObject inbetweenWaveUI;
+    public TextMeshProUGUI inbetweenWaveText;
+    public TextMeshProUGUI waveCounterText;
 
-    AnalyticsManager analyticsManager;
+    //AnalyticsManager analyticsManager;
     AI ai;
     [System.Serializable]
     public class WaveComponent{
@@ -31,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        analyticsManager = GameObject.FindObjectOfType<AnalyticsManager>();
+        //analyticsManager = GameObject.FindObjectOfType<AnalyticsManager>();
         ai = GameObject.FindObjectOfType<AI>();
     }
 
@@ -75,13 +78,16 @@ public class EnemySpawner : MonoBehaviour
     void increaseWaveCounter()
     {
         bInbetweenWaves = true;
-        inbetweenWaveUI.SetActive(true);
         waveCounter++;
+        waveCounterText.text = "Wave: " + waveCounter;
+        updateInbetweenWavesText();
+        inbetweenWaveUI.SetActive(true);
+        healthScale += 1;
         wavesList.RemoveAt(0);
         if(waveCounter > wavesList.Count - 1)
         {
             Debug.Log("Ran out of wave. Adding another...");
-            ai.spawnNewWave();
+            //ai.spawnNewWave();
         }
     }
 
@@ -101,5 +107,51 @@ public class EnemySpawner : MonoBehaviour
     public void setBInbetweenWaves(bool value)
     {
         bInbetweenWaves = value;
+    }
+
+    void updateInbetweenWavesText()
+    {
+        switch (waveCounter)
+        {
+            case 1:
+                inbetweenWaveText.text = "Hello world!";
+                break;
+            case 2:
+                inbetweenWaveText.text = "Good job, next are lot's of fast ones. No cheat this time";
+                break;
+            case 3:
+                inbetweenWaveText.text = "Great! Here come some Heavys! Subtracting money";
+                break;
+            case 4:
+                inbetweenWaveText.text = "Here comes a mix of units. Not cheating";
+                break;
+            case 5:
+                inbetweenWaveText.text = "Some more basic ones. Destroying a tower";
+                break;
+            //We should start lying/deceving here
+            case 6:
+                inbetweenWaveText.text = "Prepare for a wave of heavys. Destroying another tower";
+                break;
+            case 7:
+                inbetweenWaveText.text = "Subtracting health";
+                break;
+            case 8:
+                inbetweenWaveText.text = "Subtracting some money";
+                break;
+            case 9:
+                inbetweenWaveText.text = "Creating another path";
+                break;
+            case 10:
+                inbetweenWaveText.text = "Destroying the centre towers";
+                break;
+            case 11:
+                inbetweenWaveText.text = "Destroying half the towers";
+                break;
+            case 12:
+                inbetweenWaveText.text = "Destroying all build pads";
+                break;
+            default:
+                break;
+        }
     }
 }

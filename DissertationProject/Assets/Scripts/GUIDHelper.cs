@@ -21,7 +21,7 @@ public class GUIDHelper : MonoBehaviour, IGUIDInterface
     // Start is called before the first frame update
     void Start()
     {
-        //We need to check if a file exists that already has the UID (TODO: THIS)
+        //We need to check if a file exists that already has the UID
         //If we don't find one generate
         if(File.Exists(Application.persistentDataPath + "/player.agf"))
         {

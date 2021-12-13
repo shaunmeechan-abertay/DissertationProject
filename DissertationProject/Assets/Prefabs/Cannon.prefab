@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5397591851266937782, guid: bf1d8e4768a210446bc6a97eb2bd066c, type: 3}
-  coolDown: 1
+  coolDown: 2
   cost: 20
   damage: 5
   damageRadius: 10
