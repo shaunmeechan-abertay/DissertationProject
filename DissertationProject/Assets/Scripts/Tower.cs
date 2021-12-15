@@ -9,7 +9,7 @@ public class Tower : MonoBehaviour
     public float coolDown = 1.0f;
     float fireCoolDownLeft = 0.0f;
     public int cost = 5;
-    public int damage = 1;
+    public float damage = 1;
     public float damageRadius = 0.0f;
     Animator animator;
     AudioSource audioSource;

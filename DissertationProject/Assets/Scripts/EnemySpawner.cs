@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     float spawnCooldownleft = 0.0f;
     int waveCounter = 1;
     int groupCounter = 0;
-    float healthScale = 0.5f;
+    public float healthScale = 0.5f;
     public bool bInbetweenWaves = true;
     public GameObject inbetweenWaveUI;
     public TextMeshProUGUI inbetweenWaveText;
@@ -77,6 +77,7 @@ public class EnemySpawner : MonoBehaviour
 
     void increaseWaveCounter()
     {
+        ai.cheat(waveCounter);
         bInbetweenWaves = true;
         waveCounter++;
         waveCounterText.text = "Wave: " + waveCounter;

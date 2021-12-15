@@ -25,7 +25,7 @@ public class AI : MonoBehaviour
     public bool shouldCreateNewPath = true;
 
     //Start at 3 as the first 2 waves are defined in the inspector
-    int waveCounter = 1;
+    //int waveCounter = 1;
 
     bool bHasDestroyedCentreTowers = false;
     private void Start()
@@ -78,13 +78,13 @@ public class AI : MonoBehaviour
         scoreManager.incrementWaveCounter();
         enemySpawner.createWave(waveComponentArray);
 
-        waveCounter++;
+        //waveCounter++;
 
-        cheat();
+        //cheat();
     }
 
     //This function will randomly cheat when a new wave is created
-    void cheat()
+    public void cheat(int waveCounter)
     {
         switch (waveCounter)
         {

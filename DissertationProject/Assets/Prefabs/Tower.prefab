@@ -100,7 +100,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5397591851266937782, guid: fd3ccc5d165c4814e9861a7106ec2e61, type: 3}
   coolDown: 1
   cost: 5
-  damage: 2
+  damage: 1
   damageRadius: 0
   bCanPlayAudio: 1
   type: 0

@@ -6176,6 +6176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0cffdcc5d23cf4db66188673639214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthScale: 0.5
   bInbetweenWaves: 1
   inbetweenWaveUI: {fileID: 861760790}
   inbetweenWaveText: {fileID: 467058553}
