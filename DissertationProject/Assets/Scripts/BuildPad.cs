@@ -7,6 +7,11 @@ public class BuildPad : MonoBehaviour
     public bool isCentre = false;
     public bool isDestroyable = false;
 
+    private void Start()
+    {
+        scoreManager = GameObject.FindObjectOfType<ScoreManager>();
+    }
+
     private void OnMouseUp()
     {
         if(scoreManager.getIsBuildMenuOpen() == false)

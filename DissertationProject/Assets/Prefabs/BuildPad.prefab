@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 235e0ce0725e1a3488ea5346acc8ec76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildUIObject: {fileID: 0}
+  buildUIObject: {fileID: 837794400305484424, guid: 966cb6873496fd34aab4c08e3acb3136, type: 3}
   scoreManager: {fileID: 0}
   isCentre: 0
   isDestroyable: 0

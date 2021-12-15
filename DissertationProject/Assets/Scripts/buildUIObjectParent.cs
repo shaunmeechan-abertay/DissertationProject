@@ -33,7 +33,7 @@ public class buildUIObjectParent : MonoBehaviour
             Vector2 ray = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(ray, Vector2.zero);
 
-            //Clciked the map
+            //Clicked the map
             if (hit.collider == null)
             {
                 print("We hit something with no collider (e.g the ground)");
@@ -45,7 +45,7 @@ public class buildUIObjectParent : MonoBehaviour
             //Clicked an enemy
             if (hit.collider.GetComponent<Enemy>().isActiveAndEnabled == true)
             {
-                //Destroy(gameObject);
+                Destroy(gameObject);
                 scoreManager.setIsBuildMenuOpen(false);
                 return;
             }
