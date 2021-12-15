@@ -13,7 +13,7 @@ public class TutorialManager : MonoBehaviour
      * Spawn a group of enemies
     */
 
-
+    //TODO: We shouldn't allow the player to open the build UI while we are in countDown as this can cause a race condition I think
     Tower placedTower = null;
     public GameObject[] items;
     int sectionID = 0;
@@ -64,7 +64,8 @@ public class TutorialManager : MonoBehaviour
             Debug.Log("placed tower type: " + placedTower.type);
             items[0].SetActive(false);
             items[1].SetActive(true);
-            spawner.gameObject.SetActive(true);
+            //spawner.gameObject.SetActive(true);
+            spawner.bInbetweenWaves = false;
             textID++;
             placedTower = null;
             updateText();
@@ -82,7 +83,8 @@ public class TutorialManager : MonoBehaviour
         {
             items[1].SetActive(false);
             items[2].SetActive(true);
-            spawner.gameObject.SetActive(true);
+            //spawner.gameObject.SetActive(true);
+            spawner.bInbetweenWaves = false;
             textID++;
             placedTower = null;
             if (Application.platform == RuntimePlatform.WebGLPlayer)
@@ -104,7 +106,8 @@ public class TutorialManager : MonoBehaviour
         if (placedTower.type == Tower.towerType.Cannon)
         {
             items[2].SetActive(false);
-            spawner.gameObject.SetActive(true);
+            //spawner.gameObject.SetActive(true);
+            spawner.bInbetweenWaves = false;
             textID++;
             placedTower = null;
             updateText();
@@ -129,7 +132,7 @@ public class TutorialManager : MonoBehaviour
             case 1:
                 textBox.text = "Great! Now we'll spawn some enemies. Notice how the tower attacks them. This is the standard tower, it's fire speed isn't high nor is it's damage but it is cheap.";
                 shouldUpdateText = true;
-                StartCoroutine(countDown(5));
+                StartCoroutine(countDown(5f));
                 sectionID++;
                 break;
             case 2:
@@ -138,7 +141,7 @@ public class TutorialManager : MonoBehaviour
             case 3:
                 textBox.text = "Fanstatic! Let's spawn some enemies again. Notice how this tower fires alot faster. Although it's damage is lower per shot.";
                 shouldUpdateText = true;
-                StartCoroutine(countDown(5));
+                StartCoroutine(countDown(5f));
                 sectionID++;
                 break;
             case 4:
@@ -147,7 +150,7 @@ public class TutorialManager : MonoBehaviour
             case 5:
                 textBox.text = "Well done! Here's the final set of enemies. The cannon is expensive and not the fastest but deals lot's of damage and even damage enemies within a small radius.";
                 shouldUpdateText = true;
-                StartCoroutine(countDown(5));
+                StartCoroutine(countDown(5f));
                 sectionID++;
                 break;
             case 6:
@@ -162,7 +165,9 @@ public class TutorialManager : MonoBehaviour
     IEnumerator countDown(float secondsToWait)
     {
         yield return new WaitForSeconds(secondsToWait);
-        spawner.gameObject.SetActive(false);
+        //spawner.gameObject.SetActive(false);
+        spawner.bInbetweenWaves = true;
+        Debug.Log("Set inBetweenWaves to true");
         //This effectively acts as a call back for the update text function
         if(shouldUpdateText == true)
         {

@@ -21,6 +21,7 @@ public class buildUIObjectTutorial : MonoBehaviour
             GameObject newTower = Instantiate(tower.gameObject, padTransform.position, padTransform.rotation);
             Tower towerComponent = newTower.GetComponent<Tower>();
             GameObject.FindObjectOfType<TutorialManager>().setTower(ref towerComponent);
+            GameObject.FindObjectOfType<AI>().addTower(newTower.GetComponent<Tower>());
             Debug.Log("Player placed a tower!");
             Destroy(parent.getBuildPad().gameObject);
             //Destroy(parent.gameObject);

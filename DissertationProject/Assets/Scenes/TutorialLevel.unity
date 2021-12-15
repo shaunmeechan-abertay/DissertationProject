@@ -625,7 +625,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.85
+  m_fontSize: 45.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3570,7 +3570,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.7
+  m_fontSize: 54.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3704,7 +3704,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42.95
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4030,6 +4030,7 @@ GameObject:
   - component: {fileID: 984674558}
   - component: {fileID: 984674557}
   - component: {fileID: 984674559}
+  - component: {fileID: 984674560}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4049,7 +4050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b990cd74022798439b2eed7230361d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 15
+  money: 50
   lives: 10
   moneyText: {fileID: 935790892}
   livesText: {fileID: 177767278}
@@ -4082,6 +4083,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedTower: {fileID: 1988355394, guid: 2b01d4ea679b38345aa7a4d5b596d0f6, type: 3}
+--- !u!114 &984674560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984674556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde88a7590cf2dc44be85bd7138e0e50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies: []
+  originalPath: {fileID: 0}
+  cheatedPath: {fileID: 0}
+  destroyableGroundSprites: []
+  destroyableBuildPads: []
+  bCanPlayAudio: 1
+  shouldDeleteTowers: 0
+  shouldDecrementHealth: 0
+  shouldDecrementMoney: 0
+  shouldDestoryCentreTowers: 0
+  shouldCreateNewPath: 0
 --- !u!1001 &1002057569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5355,7 +5379,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1323887642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5368,21 +5392,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0cffdcc5d23cf4db66188673639214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthScale: 0.5
+  bInbetweenWaves: 1
+  inbetweenWaveUI: {fileID: 0}
+  inbetweenWaveText: {fileID: 0}
+  waveCounterText: {fileID: 928481835}
+  bIsTutorial: 1
   wavesList:
   - waveComponents:
     - enemyPrefab: {fileID: 7548048615654997444, guid: efed79563094a1445bf95a226c9d2134, type: 3}
-      num: 3
+      num: 4
   - waveComponents:
     - enemyPrefab: {fileID: 7548048615654997444, guid: efed79563094a1445bf95a226c9d2134, type: 3}
       num: 3
-    - enemyPrefab: {fileID: 7548048615654997444, guid: dc2528ce358a03d40b45c9f257799d87, type: 3}
-      num: 2
   - waveComponents:
     - enemyPrefab: {fileID: 7548048615654997444, guid: 8694c6fa69bfa244a9fd0b10b9c319a8, type: 3}
       num: 5
   - waveComponents:
     - enemyPrefab: {fileID: 7548048615654997444, guid: 8694c6fa69bfa244a9fd0b10b9c319a8, type: 3}
-      num: 5
+      num: 4
 --- !u!4 &1323887643
 Transform:
   m_ObjectHideFlags: 0
@@ -7335,7 +7363,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.8
+  m_fontSize: 44.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

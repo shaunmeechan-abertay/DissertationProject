@@ -14,6 +14,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject inbetweenWaveUI;
     public TextMeshProUGUI inbetweenWaveText;
     public TextMeshProUGUI waveCounterText;
+    public bool bIsTutorial = false;
 
     //AnalyticsManager analyticsManager;
     AI ai;
@@ -70,7 +71,14 @@ public class EnemySpawner : MonoBehaviour
             {
                 Debug.Log("Wave finished!");
                 groupCounter = 0;
-                increaseWaveCounter();
+                if(bIsTutorial == true)
+                {
+                    increaseWaveCounterTutorial();
+                }
+                else
+                {
+                    increaseWaveCounter();
+                }
             }
         }
     }
@@ -84,6 +92,23 @@ public class EnemySpawner : MonoBehaviour
         updateInbetweenWavesText();
         inbetweenWaveUI.SetActive(true);
         healthScale += 1;
+        wavesList.RemoveAt(0);
+        if(waveCounter > wavesList.Count - 1)
+        {
+            Debug.Log("Ran out of wave. Adding another...");
+            //ai.spawnNewWave();
+        }
+    }
+
+    void increaseWaveCounterTutorial()
+    {
+        if(ai != null)
+        {
+            ai.cheat(waveCounter);
+        }
+        bInbetweenWaves = true;
+        waveCounter++;
+        waveCounterText.text = "Wave: " + waveCounter;
         wavesList.RemoveAt(0);
         if(waveCounter > wavesList.Count - 1)
         {
