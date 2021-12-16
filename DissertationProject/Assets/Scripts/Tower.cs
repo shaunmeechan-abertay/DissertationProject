@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Tower : MonoBehaviour
@@ -14,6 +12,7 @@ public class Tower : MonoBehaviour
     Animator animator;
     AudioSource audioSource;
     public bool bCanPlayAudio = true;
+    public GameObject destructionParticles;
     public enum towerType
     {
         Standard,
@@ -93,5 +92,11 @@ public class Tower : MonoBehaviour
         {
             audioSource.PlayOneShot(audioSource.clip);
         }
+    }
+
+    public void destroy()
+    {
+        Instantiate(destructionParticles, transform.position, Quaternion.identity);
+        Destroy(this.gameObject);
     }
 }

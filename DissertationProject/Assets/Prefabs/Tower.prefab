@@ -104,6 +104,7 @@ MonoBehaviour:
   damage: 1
   damageRadius: 0
   bCanPlayAudio: 1
+  destructionParticles: {fileID: 8302286182114900418, guid: 1ab63582288e6d6478f4a152af220336, type: 3}
   type: 0
 --- !u!95 &280573106
 Animator:

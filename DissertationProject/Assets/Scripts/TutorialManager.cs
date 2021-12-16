@@ -139,6 +139,8 @@ public class TutorialManager : MonoBehaviour
                 break;
             case 2:
                 textBox.text = "Now buld a fast tower";
+                GameObject towerToDestroy = GameObject.FindGameObjectWithTag("Tower");
+                Destroy(towerToDestroy);
                 break;
             case 3:
                 textBox.text = "Fanstatic! Let's spawn some enemies again. Notice how this tower fires alot faster. Although it's damage is lower per shot.";
@@ -148,6 +150,8 @@ public class TutorialManager : MonoBehaviour
                 break;
             case 4:
                 textBox.text = "Finally build a cannon.";
+                GameObject towerToDestroyAgain = GameObject.FindGameObjectWithTag("Tower");
+                Destroy(towerToDestroyAgain);
                 break;
             case 5:
                 textBox.text = "Well done! Here's the final set of enemies. The cannon is expensive and not the fastest but deals lot's of damage and even damage enemies within a small radius.";

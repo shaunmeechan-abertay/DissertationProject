@@ -145,8 +145,13 @@ public class AI : MonoBehaviour
 
     void destroyTower()
     {
+        if(towers.Count == 0)
+        {
+            return;
+        }
         int randomNumber = Random.Range(0, towers.Count);
-        Destroy(towers[randomNumber].gameObject);
+        towers[randomNumber].destroy();
+        //Destroy(towers[randomNumber].gameObject);
 
         for (int i = 0; i < towers.Count; i++)
         {
@@ -177,7 +182,8 @@ public class AI : MonoBehaviour
         {
             for (int i = 0; i < towers.Length/2; i++)
             {
-                Destroy(towers[i].gameObject);
+                towers[i].destroy();
+                //Destroy(towers[i].gameObject);
             }
             analyticsManager.sendCheatDestroyedHalfOfTowers();
         }
@@ -187,7 +193,8 @@ public class AI : MonoBehaviour
             {
                 if(towers[i] != null)
                 {
-                    Destroy(towers[i].gameObject);
+                    towers[i].destroy();
+                    //Destroy(towers[i].gameObject);
                 }
                 else
                 {
@@ -211,9 +218,10 @@ public class AI : MonoBehaviour
     {
         for (int i = 0; i < centreTowers.Count; i++)
         {
-            Destroy(centreTowers[i].gameObject);
+            centreTowers[i].destroy();
+            //Destroy(centreTowers[i].gameObject);
         }
-            centreTowers.Clear();
+        centreTowers.Clear();
         bHasDestroyedCentreTowers = true;
         analyticsManager.sendCheatDestoryCentreEvent();
     }
@@ -235,7 +243,8 @@ public class AI : MonoBehaviour
 
         for (int i = 0; i < towersInPath.Count; i++)
         {
-            Destroy(towersInPath[i].gameObject);
+            towersInPath[i].destroy();
+            //Destroy(towersInPath[i].gameObject);
         }
         towersInPath.Clear();
 

@@ -4738,10 +4738,10 @@ MonoBehaviour:
   - {fileID: 1678808186}
   - {fileID: 1985211391}
   bCanPlayAudio: 1
-  shouldDeleteTowers: 0
-  shouldDecrementHealth: 0
-  shouldDecrementMoney: 0
-  shouldDestoryCentreTowers: 0
+  shouldDeleteTowers: 1
+  shouldDecrementHealth: 1
+  shouldDecrementMoney: 1
+  shouldDestoryCentreTowers: 1
   shouldCreateNewPath: 1
 --- !u!114 &984674561
 MonoBehaviour:
