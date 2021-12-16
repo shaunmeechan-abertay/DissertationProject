@@ -16,6 +16,7 @@ public class TutorialManager : MonoBehaviour
     //TODO: We shouldn't allow the player to open the build UI while we are in countDown as this can cause a race condition I think
     Tower placedTower = null;
     public GameObject[] items;
+    public BuildPadTutorial[] buildPads;
     int sectionID = 0;
     int textID = 0;
     bool shouldUpdateText = false;
@@ -47,7 +48,7 @@ public class TutorialManager : MonoBehaviour
                 checkStepThree();
                 break;
             case 3:
-                Debug.Log("Tutorial finished");
+                //Debug.Log("Tutorial finished");
                 break;
             default:
                 break;
@@ -60,14 +61,14 @@ public class TutorialManager : MonoBehaviour
     {
         if(placedTower.type == Tower.towerType.Standard)
         {
-            Debug.Log("Finished step one!");
-            Debug.Log("placed tower type: " + placedTower.type);
+            //Debug.Log("placed tower type: " + placedTower.type);
             items[0].SetActive(false);
             items[1].SetActive(true);
             //spawner.gameObject.SetActive(true);
             spawner.bInbetweenWaves = false;
             textID++;
             placedTower = null;
+            turnOffAllBuildPads();
             updateText();
             return true;
         }
@@ -92,6 +93,7 @@ public class TutorialManager : MonoBehaviour
                 placedTower.type = Tower.towerType.Fast;
                 Debug.Log("As running on Web faking the tower type!");
             }
+            turnOffAllBuildPads();
             updateText();
             return true;
         }
@@ -110,6 +112,7 @@ public class TutorialManager : MonoBehaviour
             spawner.bInbetweenWaves = false;
             textID++;
             placedTower = null;
+            turnOffAllBuildPads();
             updateText();
             return true;
         }
@@ -121,7 +124,6 @@ public class TutorialManager : MonoBehaviour
 
     public void setTower(ref Tower newTower)
     {
-        Debug.Log("Set tower in tutorial manager called");
         placedTower = newTower;
     }
 
@@ -162,17 +164,40 @@ public class TutorialManager : MonoBehaviour
         }
     }
 
+    void turnOffAllBuildPads()
+    {
+        for (int i = 0; i < buildPads.Length; i++)
+        {
+            if(buildPads[i] != null)
+            {
+                buildPads[i].setCanOpenBuildMenu(false);
+            }
+        }
+    }
+
+    void turnOnAllBuildPads()
+    {
+        for (int i = 0; i < buildPads.Length; i++)
+        {
+            if(buildPads[i] != null)
+            {
+                buildPads[i].setCanOpenBuildMenu(true);
+            }
+        }
+    }
+
     IEnumerator countDown(float secondsToWait)
     {
         yield return new WaitForSeconds(secondsToWait);
         //spawner.gameObject.SetActive(false);
         spawner.bInbetweenWaves = true;
-        Debug.Log("Set inBetweenWaves to true");
+        //Debug.Log("Set inBetweenWaves to true");
         //This effectively acts as a call back for the update text function
         if(shouldUpdateText == true)
         {
             shouldUpdateText = false;
             textID++;
+            turnOnAllBuildPads();
             updateText();
         }
     }

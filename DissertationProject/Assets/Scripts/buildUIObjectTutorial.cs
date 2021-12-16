@@ -14,7 +14,7 @@ public class buildUIObjectTutorial : MonoBehaviour
 
     private void OnMouseUp()
     {
-        Debug.Log(gameObject.name);
+        //Debug.Log(gameObject.name);
         if(scoreManager.canAffordPurchase(tower.cost) == true)
         {
             padTransform = parent.getBuildPadTransform();
@@ -22,7 +22,7 @@ public class buildUIObjectTutorial : MonoBehaviour
             Tower towerComponent = newTower.GetComponent<Tower>();
             GameObject.FindObjectOfType<TutorialManager>().setTower(ref towerComponent);
             GameObject.FindObjectOfType<AI>().addTower(newTower.GetComponent<Tower>());
-            Debug.Log("Player placed a tower!");
+            //Debug.Log("Player placed a tower!");
             Destroy(parent.getBuildPad().gameObject);
             //Destroy(parent.gameObject);
             parent.gameObject.SetActive(false);
