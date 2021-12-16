@@ -1,3 +1,5 @@
 https://opengameart.org/content/126-2d-spaceships - enemy sprites
 https://arcadeisland.itch.io/space-shooter-wang-tiles?download - new ground sprites
 build pad sprite: https://game-icons.net/1x1/lorc/tinker.html#download
+Explosion vfx:
+https://opengameart.org/content/explosion

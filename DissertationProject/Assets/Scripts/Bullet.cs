@@ -11,6 +11,7 @@ public class Bullet : MonoBehaviour
     Vector2 direction;
     AudioSource audioSource;
     bool shouldSelfDestruct = true;
+    public GameObject hitParticles;
 
     // Start is called before the first frame update
     void Start()
@@ -76,6 +77,7 @@ public class Bullet : MonoBehaviour
 
         if (GetComponent<AudioSource>() != null)
         {
+            //As of right now this is only used by the explosive
             StartCoroutine(destory());
         }
         else
@@ -87,6 +89,7 @@ public class Bullet : MonoBehaviour
     IEnumerator destory()
     {
         shouldSelfDestruct = false;
+        Instantiate(hitParticles, this.transform.position, Quaternion.identity);
         GetComponent<SpriteRenderer>().enabled = false;
         audioSource = GetComponent<AudioSource>();
         audioSource.PlayOneShot(audioSource.clip);

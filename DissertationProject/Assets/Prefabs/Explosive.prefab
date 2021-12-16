@@ -100,6 +100,7 @@ MonoBehaviour:
   damage: 1
   radius: 0
   target: {fileID: 0}
+  hitParticles: {fileID: 8302286182114900418, guid: 1ab63582288e6d6478f4a152af220336, type: 3}
 --- !u!82 &1460831201652995498
 AudioSource:
   m_ObjectHideFlags: 0

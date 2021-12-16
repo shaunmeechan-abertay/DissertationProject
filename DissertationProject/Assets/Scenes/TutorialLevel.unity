@@ -2309,7 +2309,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildUIObject: {fileID: 906792307}
   scoreManager: {fileID: 984674557}
-  isCentre: 0
 --- !u!1001 &625348994
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4867,6 +4866,10 @@ MonoBehaviour:
   - {fileID: 1820902389}
   - {fileID: 964296306}
   - {fileID: 1152042633}
+  buildPads:
+  - {fileID: 1634468147}
+  - {fileID: 614736107}
+  - {fileID: 2124225643}
   textBox: {fileID: 1861952268}
   spawner: {fileID: 1323887642}
   nextLevelButton: {fileID: 1014275447}
@@ -6267,7 +6270,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildUIObject: {fileID: 906792307}
   scoreManager: {fileID: 984674557}
-  isCentre: 0
 --- !u!1 &1636094440
 GameObject:
   m_ObjectHideFlags: 0
@@ -8528,7 +8530,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildUIObject: {fileID: 906792307}
   scoreManager: {fileID: 984674557}
-  isCentre: 0
 --- !u!1 &2131058594
 GameObject:
   m_ObjectHideFlags: 0

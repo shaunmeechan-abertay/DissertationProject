@@ -6195,6 +6195,7 @@ MonoBehaviour:
   inbetweenWaveUI: {fileID: 861760790}
   inbetweenWaveText: {fileID: 467058553}
   waveCounterText: {fileID: 928481835}
+  bIsTutorial: 0
   wavesList:
   - waveComponents:
     - enemyPrefab: {fileID: 7548048615654997444, guid: efed79563094a1445bf95a226c9d2134, type: 3}
