@@ -101,8 +101,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5397591851266937782, guid: fd3ccc5d165c4814e9861a7106ec2e61, type: 3}
   coolDown: 0.15
   cost: 15
-  damage: 0.5
+  damage: 0.7
   damageRadius: 0
+  explosionSfx: {fileID: 8300000, guid: c6196f466c7622f4d8e320a3721b30c1, type: 3}
   bCanPlayAudio: 1
   destructionParticles: {fileID: 8302286182114900418, guid: 1ab63582288e6d6478f4a152af220336, type: 3}
   type: 1

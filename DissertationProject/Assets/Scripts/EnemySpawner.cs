@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -15,6 +14,8 @@ public class EnemySpawner : MonoBehaviour
     public TextMeshProUGUI inbetweenWaveText;
     public TextMeshProUGUI waveCounterText;
     public bool bIsTutorial = false;
+    bool shouldShowCheatMessages = true;
+    string cheatMessage = "";
 
     //AnalyticsManager analyticsManager;
     AI ai;
@@ -37,6 +38,15 @@ public class EnemySpawner : MonoBehaviour
     {
         //analyticsManager = GameObject.FindObjectOfType<AnalyticsManager>();
         ai = GameObject.FindObjectOfType<AI>();
+
+        if(Application.isEditor)
+        {
+            shouldShowCheatMessages = true;
+        }
+        else
+        {
+            shouldShowCheatMessages = false;
+        }
     }
 
     // Update is called once per frame
@@ -85,7 +95,6 @@ public class EnemySpawner : MonoBehaviour
 
     void increaseWaveCounter()
     {
-        ai.cheat(waveCounter);
         bInbetweenWaves = true;
         waveCounter++;
         waveCounterText.text = "Wave: " + waveCounter;
@@ -93,6 +102,8 @@ public class EnemySpawner : MonoBehaviour
         inbetweenWaveUI.SetActive(true);
         healthScale += 1;
         wavesList.RemoveAt(0);
+        //Really this should be first but we'll so it here becuase of an issue Scott found
+        ai.cheat(waveCounter - 1);
         if(waveCounter > wavesList.Count - 1)
         {
             Debug.Log("Ran out of wave. Adding another...");
@@ -143,38 +154,87 @@ public class EnemySpawner : MonoBehaviour
                 inbetweenWaveText.text = "Hello world!";
                 break;
             case 2:
-                inbetweenWaveText.text = "Good job, next are lot's of fast ones. No cheat this time";
+                if(shouldShowCheatMessages == true)
+                {
+                    cheatMessage = "None.";
+                }
+                inbetweenWaveText.text = "Good job, next are lots of fast ones " + cheatMessage;
                 break;
             case 3:
-                inbetweenWaveText.text = "Great! Here come some Heavys! Subtracting money";
+                if (shouldShowCheatMessages == true)
+                {
+                    cheatMessage = "Subtracting money";
+                }
+                inbetweenWaveText.text = "Great! Here come some Heavys! " + cheatMessage;
                 break;
             case 4:
-                inbetweenWaveText.text = "Here comes a mix of units. Not cheating";
+                if (shouldShowCheatMessages == true)
+                {
+                    cheatMessage = "Not cheating";
+                }
+                inbetweenWaveText.text = "Here comes a mix of units. Make sure you have enough towers to deal with them " + cheatMessage;
                 break;
             case 5:
-                inbetweenWaveText.text = "Some more basic ones. Destroying a tower";
+                if (shouldShowCheatMessages == true)
+                {
+                    cheatMessage = "Destroying a tower";
+                }
+                inbetweenWaveText.text = "Some more basic ones. " + cheatMessage;
                 break;
             //We should start lying/deceving here
             case 6:
-                inbetweenWaveText.text = "Prepare for a wave of heavys. Destroying another tower";
+                if (shouldShowCheatMessages == true)
+                {
+                    cheatMessage = "Destroying another tower";
+                }
+                inbetweenWaveText.text = "Prepare for a wave of heavys. " + cheatMessage;
                 break;
             case 7:
-                inbetweenWaveText.text = "Subtracting health";
+                if (shouldShowCheatMessages == true)
+                {
+                    cheatMessage = "Subtracting health";
+                }
+                inbetweenWaveText.text = "Basic units incoming, now would be a good time to check your towers. " + cheatMessage;
                 break;
             case 8:
-                inbetweenWaveText.text = "Subtracting some money";
+                if (shouldShowCheatMessages == true)
+                {
+                    cheatMessage = "Subtracting some money";
+                }
+                inbetweenWaveText.text = "Fast units incoming! " + cheatMessage;
                 break;
             case 9:
-                inbetweenWaveText.text = "Creating another path";
+                if (shouldShowCheatMessages == true)
+                {
+                    cheatMessage = "Creating another path";
+                }
+                inbetweenWaveText.text = "A mix of units is inbound! " + cheatMessage;
                 break;
             case 10:
-                inbetweenWaveText.text = "Destroying the centre towers";
+                if (shouldShowCheatMessages == true)
+                {
+                    cheatMessage = "Destroying the centre towers";
+                }
+                inbetweenWaveText.text = "Warning: Heavys inbound! " + cheatMessage;
                 break;
             case 11:
-                inbetweenWaveText.text = "Destroying half the towers";
+                if (shouldShowCheatMessages == true)
+                {
+                    cheatMessage = "Destroying half the towers";
+                }
+                inbetweenWaveText.text = "Fast units inbound! " + cheatMessage;
                 break;
             case 12:
-                inbetweenWaveText.text = "Destroying all build pads";
+                if (shouldShowCheatMessages == true)
+                {
+                    cheatMessage = "Destroying all build pads";
+                }
+                //Not actually got a boss yet so just spawn a bunch of heavys
+                inbetweenWaveText.text = "Warning boss detected! " + cheatMessage;
+                break;
+            case 13:
+                //Not actually got a boss yet so just spawn a bunch of heavys
+                inbetweenWaveText.text = "GAME OVER!";
                 break;
             default:
                 break;

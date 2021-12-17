@@ -1723,9 +1723,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.94, y: 1}
-  m_AnchoredPosition: {x: -2.9788208, y: 0}
-  m_SizeDelta: {x: -5.9576035, y: 0}
+  m_AnchorMax: {x: 0.92, y: 1}
+  m_AnchoredPosition: {x: -2.4000244, y: 0}
+  m_SizeDelta: {x: -4.800049, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &467058553
 MonoBehaviour:
@@ -1747,7 +1747,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Welcome to the main game! Press the next wave button when you are ready.
+  m_text: Welcome to the main game! Place some towers then press the next wave button
+    when you are ready.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1774,10 +1775,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 44.1
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -5271,6 +5272,36 @@ MonoBehaviour:
       num: 15
   - waveComponents:
     - enemyPrefab: {fileID: 7548048615654997444, guid: 8694c6fa69bfa244a9fd0b10b9c319a8, type: 3}
+      num: 15
+  - waveComponents:
+    - enemyPrefab: {fileID: 7548048615654997444, guid: efed79563094a1445bf95a226c9d2134, type: 3}
+      num: 15
+  - waveComponents:
+    - enemyPrefab: {fileID: 7548048615654997444, guid: dc2528ce358a03d40b45c9f257799d87, type: 3}
+      num: 5
+    - enemyPrefab: {fileID: 7548048615654997444, guid: efed79563094a1445bf95a226c9d2134, type: 3}
+      num: 5
+    - enemyPrefab: {fileID: 7548048615654997444, guid: dc2528ce358a03d40b45c9f257799d87, type: 3}
+      num: 5
+    - enemyPrefab: {fileID: 7548048615654997444, guid: 8694c6fa69bfa244a9fd0b10b9c319a8, type: 3}
+      num: 2
+    - enemyPrefab: {fileID: 7548048615654997444, guid: dc2528ce358a03d40b45c9f257799d87, type: 3}
+      num: 4
+  - waveComponents:
+    - enemyPrefab: {fileID: 7548048615654997444, guid: dc2528ce358a03d40b45c9f257799d87, type: 3}
+      num: 2
+    - enemyPrefab: {fileID: 7548048615654997444, guid: efed79563094a1445bf95a226c9d2134, type: 3}
+      num: 10
+    - enemyPrefab: {fileID: 7548048615654997444, guid: 8694c6fa69bfa244a9fd0b10b9c319a8, type: 3}
+      num: 5
+  - waveComponents:
+    - enemyPrefab: {fileID: 7548048615654997444, guid: dc2528ce358a03d40b45c9f257799d87, type: 3}
+      num: 1
+  - waveComponents:
+    - enemyPrefab: {fileID: 7548048615654997444, guid: efed79563094a1445bf95a226c9d2134, type: 3}
+      num: 15
+  - waveComponents:
+    - enemyPrefab: {fileID: 7548048615654997444, guid: dc2528ce358a03d40b45c9f257799d87, type: 3}
       num: 15
 --- !u!4 &1323887643
 Transform:

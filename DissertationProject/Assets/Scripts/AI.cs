@@ -218,7 +218,10 @@ public class AI : MonoBehaviour
     {
         for (int i = 0; i < centreTowers.Count; i++)
         {
-            centreTowers[i].destroy();
+            if(centreTowers[i] != null)
+            {
+                centreTowers[i].destroy();
+            }
             //Destroy(centreTowers[i].gameObject);
         }
         centreTowers.Clear();

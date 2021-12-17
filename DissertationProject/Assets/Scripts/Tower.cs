@@ -11,6 +11,7 @@ public class Tower : MonoBehaviour
     public float damageRadius = 0.0f;
     Animator animator;
     AudioSource audioSource;
+    public AudioClip explosionSfx;
     public bool bCanPlayAudio = true;
     public GameObject destructionParticles;
     public enum towerType
@@ -84,6 +85,7 @@ public class Tower : MonoBehaviour
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, this.transform.position, this.transform.rotation);
 
         Bullet bullet = bulletGO.GetComponent<Bullet>();
+        bullet.bShouldPlayAudio = bCanPlayAudio;
         bullet.damage = damage;
         bullet.radius = damageRadius;
         bullet.target = e.transform;
@@ -97,6 +99,7 @@ public class Tower : MonoBehaviour
     public void destroy()
     {
         Instantiate(destructionParticles, transform.position, Quaternion.identity);
+        audioSource.PlayOneShot(explosionSfx);
         Destroy(this.gameObject);
     }
 }

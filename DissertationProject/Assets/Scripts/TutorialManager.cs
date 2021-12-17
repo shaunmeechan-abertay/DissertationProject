@@ -13,7 +13,6 @@ public class TutorialManager : MonoBehaviour
      * Spawn a group of enemies
     */
 
-    //TODO: We shouldn't allow the player to open the build UI while we are in countDown as this can cause a race condition I think
     Tower placedTower = null;
     public GameObject[] items;
     public BuildPadTutorial[] buildPads;
@@ -160,7 +159,8 @@ public class TutorialManager : MonoBehaviour
                 sectionID++;
                 break;
             case 6:
-                textBox.text = "That's all for the tutorial. Click the button on screen to move to the actual game when your ready.";
+                textBox.text = "That's all for the tutorial. You can also click on a tower and press delete to destroy the tower and get the money back." +
+                    "Click the button on screen to move to the actual game when your ready.";
                 nextLevelButton.SetActive(true);
                 break;
             default:

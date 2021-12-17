@@ -103,6 +103,7 @@ MonoBehaviour:
   cost: 20
   damage: 2
   damageRadius: 3
+  explosionSfx: {fileID: 8300000, guid: c6196f466c7622f4d8e320a3721b30c1, type: 3}
   bCanPlayAudio: 1
   destructionParticles: {fileID: 8302286182114900418, guid: 1ab63582288e6d6478f4a152af220336, type: 3}
   type: 2

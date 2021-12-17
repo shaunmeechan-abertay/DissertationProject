@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
     AudioSource audioSource;
     bool shouldSelfDestruct = true;
     public GameObject hitParticles;
-
+    public bool bShouldPlayAudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -91,9 +91,12 @@ public class Bullet : MonoBehaviour
         shouldSelfDestruct = false;
         Instantiate(hitParticles, this.transform.position, Quaternion.identity);
         GetComponent<SpriteRenderer>().enabled = false;
-        audioSource = GetComponent<AudioSource>();
-        audioSource.PlayOneShot(audioSource.clip);
-        yield return new WaitForSeconds(audioSource.clip.length);
+        if(bShouldPlayAudio == true)
+        {
+            audioSource = GetComponent<AudioSource>();
+            audioSource.PlayOneShot(audioSource.clip);
+            yield return new WaitForSeconds(audioSource.clip.length);
+        }
         Destroy(this.gameObject);
     }
 }
