@@ -75,7 +75,7 @@ public class ScoreManager : MonoBehaviour
         if(canLose == true)
         {
             analyticsManager.sendLoseEvent();
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             //Application.Quit();
             //EditorApplication.isPlaying = false;        
         }

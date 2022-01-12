@@ -3338,7 +3338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8712207105261531362, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.498
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 8712207105261531362, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3727,7 +3727,7 @@ MonoBehaviour:
   moneyText: {fileID: 935790892}
   livesText: {fileID: 177767278}
   waveText: {fileID: 928481835}
-  canLose: 0
+  canLose: 1
 --- !u!4 &984674558
 Transform:
   m_ObjectHideFlags: 0
@@ -6346,7 +6346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8712207105261531362, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.498
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 8712207105261531362, guid: 47e2c0005ccbe9e41bb68774727f30d6, type: 3}
       propertyPath: m_LocalPosition.z

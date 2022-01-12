@@ -48,7 +48,17 @@ public class SellingManager : MonoBehaviour
             {
                 scoreManager.incrementMoney(selectedTower.cost);
                 //Now need to place a new buildPad
-                Instantiate(prefabToSpawn, selectedTower.transform.position, Quaternion.identity);
+                //ISSUE: When destroying a tower in the new path it isn't marked as such
+                //This means when the path is made the tower isn't destroyed
+                if(selectedTower.transform.position.y >= 3.5f)
+                {
+                    GameObject temp = Instantiate(prefabToSpawn, selectedTower.transform.position, Quaternion.identity);
+                    temp.GetComponent<BuildPad>().isDestroyable = true;
+                }
+                else
+                {
+                    Instantiate(prefabToSpawn, selectedTower.transform.position, Quaternion.identity);
+                }
                 Destroy(selectedTower.gameObject);
                 selectedTower = null;
             }

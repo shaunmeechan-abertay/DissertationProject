@@ -246,7 +246,10 @@ public class AI : MonoBehaviour
 
         for (int i = 0; i < towersInPath.Count; i++)
         {
-            towersInPath[i].destroy();
+            if (towersInPath[i] != null)
+            {
+                towersInPath[i].destroy();
+            }
             //Destroy(towersInPath[i].gameObject);
         }
         towersInPath.Clear();
