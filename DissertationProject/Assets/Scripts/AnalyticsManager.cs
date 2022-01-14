@@ -28,6 +28,7 @@ public class AnalyticsManager : MonoBehaviour
 
         AnalyticsResult analyticsResult = Analytics.CustomEvent("LevelWin: " + UID);
         Debug.Log("Analytics result: " + analyticsResult);
+        analyticsResult = Analytics.CustomEvent("Player lives: " + GameObject.FindGameObjectWithTag("GameController").GetComponent<ScoreManager>().lives + " : " + UID);
     }
 
     public void sendLoseEvent()
@@ -42,8 +43,13 @@ public class AnalyticsManager : MonoBehaviour
             getUID();
         }
 
-        AnalyticsResult analyticsResult = Analytics.CustomEvent("LevelLose: " + UID);
+        AnalyticsResult analyticsResult = Analytics.CustomEvent("LevelLose on wave " + GameObject.FindGameObjectWithTag("GameController").GetComponent<ScoreManager>().getWave() + " : " + UID);
         Debug.Log("Analytics result: " + analyticsResult);
+        analyticsResult = Analytics.CustomEvent("Player cash: " + GameObject.FindGameObjectWithTag("GameController").GetComponent<ScoreManager>().money + " : " + UID);
+        Debug.Log("Analytics result: " + analyticsResult);
+
+        //We could also maybe send how much money they had and how many towers they had
+        //Maybe also how many they had over the whole game
     }
 
     public void sendCheatHealthEvent()

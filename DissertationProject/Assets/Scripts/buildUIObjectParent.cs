@@ -35,7 +35,6 @@ public class buildUIObjectParent : MonoBehaviour
             //Clicked the map
             if (hit.collider == null)
             {
-                print("We hit something with no collider (e.g the ground)");
                 close();
                 return;
             }

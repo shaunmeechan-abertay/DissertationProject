@@ -95,4 +95,9 @@ public class ScoreManager : MonoBehaviour
         return bIsBuildMenuOpen;
     }
 
+    public int getWave()
+    {
+        return wave;
+    }
+
 }

@@ -31,6 +31,11 @@ public class TutorialManager : MonoBehaviour
             placedTower.type = Tower.towerType.Cannon;
             Debug.Log("As running on Web faking the tower type!");
         }
+
+        if(Application.platform == RuntimePlatform.Android)
+        {
+            textBox.text = "Welcome to the tutorial level. Firstly press on one of the squares and build a tower. Press the settings button at the top any time to see in game options.";
+        }
     }
 
     void Update()

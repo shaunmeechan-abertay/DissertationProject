@@ -1680,7 +1680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e4fed69f0746714f8ea814afde803e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bShouldSendAnalytics: 0
+  bShouldSendAnalytics: 1
 --- !u!4 &458899904
 Transform:
   m_ObjectHideFlags: 0
@@ -3710,7 +3710,7 @@ GameObject:
   - component: {fileID: 984674561}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
