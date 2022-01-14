@@ -42,21 +42,26 @@ public class AI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            bCanPlayAudio = !bCanPlayAudio;
-            for (int i = 0; i < towers.Count; i++)
-            {
-                towers[i].bCanPlayAudio = bCanPlayAudio;
-            }
+            flipAudio();
+        }
+    }
 
-            for (int i = 0; i < centreTowers.Count; i++)
-            {
-                centreTowers[i].bCanPlayAudio = bCanPlayAudio;
-            }
+    public void flipAudio()
+    {
+        bCanPlayAudio = !bCanPlayAudio;
+        for (int i = 0; i < towers.Count; i++)
+        {
+            towers[i].bCanPlayAudio = bCanPlayAudio;
+        }
 
-            for (int i = 0; i < towersInPath.Count; i++)
-            {
-                towersInPath[i].bCanPlayAudio = bCanPlayAudio;
-            }
+        for (int i = 0; i < centreTowers.Count; i++)
+        {
+            centreTowers[i].bCanPlayAudio = bCanPlayAudio;
+        }
+
+        for (int i = 0; i < towersInPath.Count; i++)
+        {
+            towersInPath[i].bCanPlayAudio = bCanPlayAudio;
         }
     }
 

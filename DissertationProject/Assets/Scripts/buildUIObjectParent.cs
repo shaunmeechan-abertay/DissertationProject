@@ -5,7 +5,6 @@ public class buildUIObjectParent : MonoBehaviour
     Transform padTransform;
     GameObject buildPad;
     ScoreManager scoreManager;
-    Vector2 mouseInput = new Vector2(0.0f, 0.0f);
     private void Start()
     {
         scoreManager = GameObject.FindObjectOfType<ScoreManager>();
@@ -37,19 +36,39 @@ public class buildUIObjectParent : MonoBehaviour
             if (hit.collider == null)
             {
                 print("We hit something with no collider (e.g the ground)");
-                Destroy(gameObject);
-                scoreManager.setIsBuildMenuOpen(false);
+                close();
                 return;
             }
+
+            if(hit.collider.GetComponent<BuildPad>() == true)
+            {
+                //It's just the build pad so ignore
+                if (hit.collider.gameObject == buildPad)
+                {
+                    return;
+                }
+                else
+                {
+                    close();
+                    return;
+                }
+            }
+
+            Debug.Log(hit.collider.name);
 
             //Clicked an enemy
             if (hit.collider.GetComponent<Enemy>().isActiveAndEnabled == true)
             {
-                Destroy(gameObject);
-                scoreManager.setIsBuildMenuOpen(false);
+                close();
                 return;
             }
 
         }
+    }
+
+    void close()
+    {
+        Destroy(gameObject);
+        scoreManager.setIsBuildMenuOpen(false);
     }
 }
