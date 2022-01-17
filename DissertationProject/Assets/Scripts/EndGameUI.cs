@@ -4,7 +4,11 @@ using TMPro;
 
 public class EndGameUI : MonoBehaviour
 {
+#if UNITY_ANDROID
     [DllImport("WebCopyText.jslib")]
+#else
+    [DllImport("__Internal")]
+#endif
     private static extern void CopyText(string str);
 
     public GUIDHelper GUIDHelper;

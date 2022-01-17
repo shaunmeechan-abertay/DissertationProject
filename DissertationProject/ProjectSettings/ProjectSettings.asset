@@ -742,6 +742,7 @@ PlayerSettings:
     Build: 0
     Collab: 0
     Game Performance: 0
+    Legacy Analytics: 1
     Purchasing: 0
     UDP: 0
     Unity Ads: 0
@@ -758,10 +759,10 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 0fdca415-241c-455a-a6ef-880b46c9e3cf
+  cloudProjectId: a8513677-f4e6-4061-b54f-145491f72a71
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: DissertationProject
+  projectName: DissertationProject-Release
   organizationId: meechan007
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
