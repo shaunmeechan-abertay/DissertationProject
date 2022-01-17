@@ -11,6 +11,7 @@ public class EnemySpawner : MonoBehaviour
     public float healthScale = 0.5f;
     public bool bInbetweenWaves = true;
     public GameObject inbetweenWaveUI;
+    public GameObject nextLevelButton;
     public TextMeshProUGUI inbetweenWaveText;
     public TextMeshProUGUI waveCounterText;
     public bool bIsTutorial = false;
@@ -158,7 +159,7 @@ public class EnemySpawner : MonoBehaviour
                 {
                     cheatMessage = "None.";
                 }
-                inbetweenWaveText.text = "Good job, next are lots of fast ones " + cheatMessage;
+                inbetweenWaveText.text = "Good job next is lots of fast ones. " + cheatMessage;
                 break;
             case 3:
                 if (shouldShowCheatMessages == true)
@@ -172,7 +173,7 @@ public class EnemySpawner : MonoBehaviour
                 {
                     cheatMessage = "Not cheating";
                 }
-                inbetweenWaveText.text = "Here comes a mix of units. Make sure you have enough towers to deal with them " + cheatMessage;
+                inbetweenWaveText.text = "Here comes a mix of units. Make sure you have enough towers to deal with them. " + cheatMessage;
                 break;
             case 5:
                 if (shouldShowCheatMessages == true)
@@ -194,14 +195,14 @@ public class EnemySpawner : MonoBehaviour
                 {
                     cheatMessage = "Subtracting health";
                 }
-                inbetweenWaveText.text = "Basic units incoming, now would be a good time to check your towers. " + cheatMessage;
+                inbetweenWaveText.text = "Basic units are incoming, now would be a good time to check your towers. " + cheatMessage;
                 break;
             case 8:
                 if (shouldShowCheatMessages == true)
                 {
                     cheatMessage = "Subtracting some money";
                 }
-                inbetweenWaveText.text = "Fast units incoming! " + cheatMessage;
+                inbetweenWaveText.text = "Fast units are incoming! " + cheatMessage;
                 break;
             case 9:
                 if (shouldShowCheatMessages == true)
@@ -229,12 +230,12 @@ public class EnemySpawner : MonoBehaviour
                 {
                     cheatMessage = "Destroying all build pads";
                 }
-                //Not actually got a boss yet so just spawn a bunch of heavys
+                //Not actually got a boss so just spawn a bunch of heavys
                 inbetweenWaveText.text = "Warning boss detected! " + cheatMessage;
                 break;
             case 13:
-                //Not actually got a boss yet so just spawn a bunch of heavys
                 inbetweenWaveText.text = "GAME OVER!";
+                nextLevelButton.SetActive(true);
                 break;
             default:
                 break;

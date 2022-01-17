@@ -4,7 +4,7 @@ using TMPro;
 
 public class EndGameUI : MonoBehaviour
 {
-    [DllImport("__Internal")]
+    [DllImport("WebCopyText.jslib")]
     private static extern void CopyText(string str);
 
     public GUIDHelper GUIDHelper;

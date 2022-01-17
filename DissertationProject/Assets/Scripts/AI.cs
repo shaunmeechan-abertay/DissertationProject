@@ -1,6 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AI : MonoBehaviour
 {
@@ -23,6 +23,7 @@ public class AI : MonoBehaviour
     public bool shouldDecrementMoney = true;
     public bool shouldDestoryCentreTowers = true;
     public bool shouldCreateNewPath = true;
+    public Image audioButtonImage;
 
     //Start at 3 as the first 2 waves are defined in the inspector
     //int waveCounter = 1;
@@ -36,6 +37,15 @@ public class AI : MonoBehaviour
         towers = new List<Tower>();
         centreTowers = new List<Tower>();
         towersInPath = new List<Tower>();
+
+        if (bCanPlayAudio == true)
+        {
+            audioButtonImage.color = Color.green;
+        }
+        else
+        {
+            audioButtonImage.color = Color.red;
+        }
     }
 
     private void Update()
@@ -49,6 +59,16 @@ public class AI : MonoBehaviour
     public void flipAudio()
     {
         bCanPlayAudio = !bCanPlayAudio;
+
+        if(bCanPlayAudio == true)
+        {
+            audioButtonImage.color = Color.green;
+        }
+        else
+        {
+            audioButtonImage.color = Color.red;
+        }
+
         for (int i = 0; i < towers.Count; i++)
         {
             towers[i].bCanPlayAudio = bCanPlayAudio;

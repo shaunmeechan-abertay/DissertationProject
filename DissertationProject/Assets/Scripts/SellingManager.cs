@@ -6,6 +6,8 @@ public class SellingManager : MonoBehaviour
     ScoreManager scoreManager;
     public GameObject prefabToSpawn;
     bool isHolding = false;
+    SpriteRenderer towerSR;
+    float aValue = 1.0f;
 
     private void Start()
     {
@@ -22,8 +24,8 @@ public class SellingManager : MonoBehaviour
             if(isHolding == true)
             {
                 isHolding = false;
-                StopCoroutine(sellTimer());
-                Debug.Log("Stopped coroutine");
+                aValue = 1.0f;
+                towerSR.color = new Color(towerSR.color.r, towerSR.color.g, towerSR.color.b, aValue);
             }
 
             if(hit.collider == null)
@@ -58,27 +60,39 @@ public class SellingManager : MonoBehaviour
 
             if (hit.collider == null)
             {
-                Debug.Log("Hit nothing!");
+                //Debug.Log("Hit nothing!");
                 return;
             }
 
             if (hit.collider.tag == "Tower")
             {
-                Debug.Log("Hit tower");
+                //Debug.Log("Hit tower");
                 if(isHolding == false)
                 {
                     isHolding = true;
-                    StartCoroutine(sellTimer());
+                    //StartCoroutine(sellTimer());
                 }
 
-                if (selectedTower != null)
-                {
-                    selectedTower.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
-                }
+                //if (selectedTower != null)
+                //{
+                //    selectedTower.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
+                //}
                 selectedTower = hit.collider.GetComponent<Tower>();
+                towerSR = selectedTower.GetComponent<SpriteRenderer>();
+                towerSR.color = Color.yellow;
 
-                selectedTower.GetComponent<SpriteRenderer>().color = Color.yellow;
                 //Start a timer, if player stops holding button stop timer
+            }
+        }
+
+        if(isHolding == true)
+        {
+            //Issue, this isn't frame rate independent!
+            aValue -= (0.9f * Time.deltaTime);
+            towerSR.color = new Color(towerSR.color.r, towerSR.color.g, towerSR.color.b, aValue);
+            if(aValue <= 0.0f)
+            {
+                destroyTower();
             }
         }
 
@@ -105,6 +119,7 @@ public class SellingManager : MonoBehaviour
             }
             Destroy(selectedTower.gameObject);
             selectedTower = null;
+            aValue = 1.0f;
         }
     }
 

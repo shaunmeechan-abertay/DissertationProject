@@ -54,6 +54,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -364,6 +365,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Sniper tower_8: -5260962192970144503
+      Sniper tower_5: -8357118947485123321
+      Sniper tower_3: 3652062131348118741
+      Sniper tower_6: 7434429313014503815
+      Sniper tower_0: -7974414106778158896
+      Sniper tower_1: 9023115892187537150
+      Sniper tower_7: 2118406045798871525
+      Sniper tower_2: 2162206346520433737
+      Sniper tower_4: 4299313177275545815
+      Sniper tower_9: -4729366680585983859
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
