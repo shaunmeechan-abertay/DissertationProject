@@ -32,6 +32,22 @@ public class buildUIObject : MonoBehaviour
             {
                 GameObject.FindObjectOfType<AI>().addTower(newTower.GetComponent<Tower>());
             }
+
+            //Send data to the analytics manager
+            AnalyticsManager analyticsManager = GameObject.FindGameObjectWithTag("AnalyticsManager").GetComponent<AnalyticsManager>();
+            analyticsManager.incrementTowerCount();
+            switch(tower.type)
+            {
+                case Tower.towerType.Standard:
+                    analyticsManager.incrementBasicTowerCount();
+                    break;
+                case Tower.towerType.Fast:
+                    analyticsManager.incrementFastTowerCount();
+                    break;
+                case Tower.towerType.Cannon:
+                    analyticsManager.incrementCannonTowerCount();
+                    break;
+            }
             Destroy(parent.getBuildPad().gameObject);
             Destroy(parent.gameObject);
             scoreManager.setIsBuildMenuOpen(false);

@@ -113,6 +113,16 @@ public class SellingManager : MonoBehaviour
                 GameObject temp = Instantiate(prefabToSpawn, selectedTower.transform.position, Quaternion.identity);
                 temp.GetComponent<BuildPad>().isDestroyable = true;
             }
+            else if(selectedTower.transform.position.y == 1.5f)
+            {
+                GameObject temp = Instantiate(prefabToSpawn, selectedTower.transform.position, Quaternion.identity);
+                temp.GetComponent<BuildPad>().isCentre = true;
+            }
+            else if(selectedTower.transform.position.y == -0.5f)
+            {
+                GameObject temp = Instantiate(prefabToSpawn, selectedTower.transform.position, Quaternion.identity);
+                temp.GetComponent<BuildPad>().isCentre = true;
+            }
             else
             {
                 Instantiate(prefabToSpawn, selectedTower.transform.position, Quaternion.identity);

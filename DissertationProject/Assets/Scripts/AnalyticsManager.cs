@@ -3,13 +3,16 @@
 using UnityEngine;
 using UnityEngine.Analytics;
 
-//TODO: Add the ability to not send analytics when in Unity editor
-
 public class AnalyticsManager : MonoBehaviour
 {
     GUIDHelper gUIDHelper;
     string UID;
     public bool bShouldSendAnalytics = true;
+    int towerCount = 0;
+    int basicTowerCount = 0;
+    int fastTowerCount = 0;
+    int cannonTowerCount = 0;
+
     private void Start()
     {
         gUIDHelper = GameObject.FindObjectOfType<GUIDHelper>();
@@ -29,6 +32,18 @@ public class AnalyticsManager : MonoBehaviour
         AnalyticsResult analyticsResult = Analytics.CustomEvent("LevelWin: " + UID);
         Debug.Log("Analytics result: " + analyticsResult);
         analyticsResult = Analytics.CustomEvent("Player lives: " + GameObject.FindGameObjectWithTag("GameController").GetComponent<ScoreManager>().lives + " : " + UID);
+        Debug.Log("Analytics result: " + analyticsResult);
+        analyticsResult = Analytics.CustomEvent("Player cash: " + GameObject.FindGameObjectWithTag("GameController").GetComponent<ScoreManager>().money + " : " + UID);
+        Debug.Log("Analytics result: " + analyticsResult);
+        analyticsResult = Analytics.CustomEvent("Player tower count: " + towerCount + " : " + UID);
+        Debug.Log("Analytics result: " + analyticsResult);
+        analyticsResult = Analytics.CustomEvent("Player basic tower count: " + basicTowerCount + " : " + UID);
+        Debug.Log("Analytics result: " + analyticsResult);
+        analyticsResult = Analytics.CustomEvent("Player fast tower count: " + fastTowerCount + " : " + UID);
+        Debug.Log("Analytics result: " + analyticsResult);
+        analyticsResult = Analytics.CustomEvent("Player cannon tower count: " + cannonTowerCount + " : " + UID);
+        Debug.Log("Analytics result: " + analyticsResult);
+
     }
 
     public void sendLoseEvent()
@@ -47,8 +62,17 @@ public class AnalyticsManager : MonoBehaviour
         Debug.Log("Analytics result: " + analyticsResult);
         analyticsResult = Analytics.CustomEvent("Player cash: " + GameObject.FindGameObjectWithTag("GameController").GetComponent<ScoreManager>().money + " : " + UID);
         Debug.Log("Analytics result: " + analyticsResult);
+        analyticsResult = Analytics.CustomEvent("Player tower count: " + towerCount + " : " + UID);
+        Debug.Log("Analytics result: " + analyticsResult);
+        analyticsResult = Analytics.CustomEvent("Player basic tower count: " + basicTowerCount + " : " + UID);
+        Debug.Log("Analytics result: " + analyticsResult);
+        analyticsResult = Analytics.CustomEvent("Player fast tower count: " + fastTowerCount + " : " + UID);
+        Debug.Log("Analytics result: " + analyticsResult);
+        analyticsResult = Analytics.CustomEvent("Player cannon tower count: " + cannonTowerCount + " : " + UID);
+        Debug.Log("Analytics result: " + analyticsResult);
 
-        //We could also maybe send how much money they had and how many towers they had
+
+        //We could also send how many towers they had
         //Maybe also how many they had over the whole game
     }
 
@@ -170,8 +194,29 @@ public class AnalyticsManager : MonoBehaviour
        //If it is still null something has gone very wrong!
        if (UID == null)
        {
-        Debug.LogError("ERROR: UID is null!");
-        return;
+            Debug.LogError("ERROR: UID is null!");
+            return;
        }
     }
+
+    public void incrementTowerCount()
+    {
+        towerCount++;
+    }
+
+    public void incrementBasicTowerCount()
+    {
+        basicTowerCount++;
+    }
+
+    public void incrementFastTowerCount()
+    {
+        fastTowerCount++;
+    }
+
+    public void incrementCannonTowerCount()
+    {
+        cannonTowerCount++;
+    }
+
 }
