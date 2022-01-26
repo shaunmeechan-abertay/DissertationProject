@@ -134,7 +134,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 5
+  bundleVersion: 10
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -160,7 +160,7 @@ PlayerSettings:
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 0
-  AndroidBundleVersionCode: 5
+  AndroidBundleVersionCode: 10
   AndroidMinSdkVersion: 22
   AndroidTargetSdkVersion: 32
   AndroidPreferredInstallLocation: 1
@@ -168,7 +168,7 @@ PlayerSettings:
   stripEngineCode: 1
   iPhoneStrippingLevel: 0
   iPhoneScriptCallOptimization: 0
-  ForceInternetPermission: 0
+  ForceInternetPermission: 1
   ForceSDCardPermission: 0
   CreateWallpaper: 0
   APKExpansionFiles: 0
@@ -759,10 +759,10 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 0fdca415-241c-455a-a6ef-880b46c9e3cf
+  cloudProjectId: 31b2f07a-0def-4242-86b7-6935d81f525d
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: DissertationProject-Dev
+  projectName: DissertationProject-Production
   organizationId: meechan007
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
