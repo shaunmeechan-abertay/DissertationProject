@@ -4194,7 +4194,7 @@ MonoBehaviour:
   moneyText: {fileID: 935790892}
   livesText: {fileID: 177767278}
   waveText: {fileID: 928481835}
-  canLose: 0
+  canLose: 1
 --- !u!4 &984674558
 Transform:
   m_ObjectHideFlags: 0

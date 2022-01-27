@@ -346,21 +346,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\user\Documents\GitHub\DissertationProject\DissertationProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 30}
-    m_SelectedIDs: 905f0000
-    m_LastClickedID: 24464
+    m_SelectedIDs: 885f0000
+    m_LastClickedID: 24456
     m_ExpandedIDs: 000000006c5f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -519,7 +519,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 26e0ffffaae0ffff32e2ffff60e3ffffbae4ffffcce4ffffa4f2ffffc8f3ffff76f6ffff2cf8ffff10fbffffbc5f0000d2640000
+      m_ExpandedIDs: 38dfffffb8dfffffdadfffff08e1ffff58e2ffff64e2ffff58e4ffffd8e4ffff64e6ffff96e7fffff4e8ffff0ae9ffff2aefffff8cf8ffff10fbffffc65f0000e65f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

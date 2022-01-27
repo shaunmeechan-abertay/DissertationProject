@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Runtime.InteropServices;
+using System.Collections;
 using TMPro;
 
 public class EndGameUI : MonoBehaviour
@@ -35,5 +36,7 @@ public class EndGameUI : MonoBehaviour
         {
             GUIUtility.systemCopyBuffer = GUIDText.text;
         }
+
+        Application.OpenURL("https://forms.gle/DLW5NCTGqpohUhy76");
     }
 }
