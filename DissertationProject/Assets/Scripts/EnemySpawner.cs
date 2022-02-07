@@ -241,4 +241,9 @@ public class EnemySpawner : MonoBehaviour
                 break;
         }
     }
+
+    public int getWave()
+    {
+        return waveCounter;
+    }
 }

@@ -58,7 +58,7 @@ public class AnalyticsManager : MonoBehaviour
             getUID();
         }
 
-        AnalyticsResult analyticsResult = Analytics.CustomEvent("LevelLose on wave " + GameObject.FindGameObjectWithTag("GameController").GetComponent<ScoreManager>().getWave() + " : " + UID);
+        AnalyticsResult analyticsResult = Analytics.CustomEvent("LevelLose on wave " + GameObject.FindGameObjectWithTag("Spawner").GetComponent<EnemySpawner>().getWave() + " : " + UID);
         Debug.Log("Analytics result: " + analyticsResult);
         analyticsResult = Analytics.CustomEvent("Player cash: " + GameObject.FindGameObjectWithTag("GameController").GetComponent<ScoreManager>().money + " : " + UID);
         Debug.Log("Analytics result: " + analyticsResult);

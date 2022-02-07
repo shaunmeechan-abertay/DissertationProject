@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Tower
   - AnalyticsManager
+  - Spawner
   layers:
   - Default
   - TransparentFX

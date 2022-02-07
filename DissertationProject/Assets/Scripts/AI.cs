@@ -87,10 +87,6 @@ public class AI : MonoBehaviour
 
     public void spawnNewWave()
     {
-
-        //TODO: Decided if this should be a list or stay as an array
-        //Since the AI will be creating waves etc probably best to have something
-        //That can be adjusted dynamically
         EnemySpawner.WaveComponent waveComponent = new EnemySpawner.WaveComponent();
         EnemySpawner.WaveComponent[] waveComponentArray = new EnemySpawner.WaveComponent[1];
         int enemyToUse = Random.Range(0, enemies.Length);
