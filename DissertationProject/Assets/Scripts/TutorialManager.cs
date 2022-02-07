@@ -142,7 +142,7 @@ public class TutorialManager : MonoBehaviour
                 sectionID++;
                 break;
             case 2:
-                textBox.text = "Now buld a fast tower";
+                textBox.text = "Now build a fast tower";
                 GameObject towerToDestroy = GameObject.FindGameObjectWithTag("Tower");
                 Destroy(towerToDestroy);
                 break;

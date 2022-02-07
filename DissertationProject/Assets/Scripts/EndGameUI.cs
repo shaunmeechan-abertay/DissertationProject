@@ -7,10 +7,15 @@ public class EndGameUI : MonoBehaviour
 {
 #if UNITY_ANDROID
     [DllImport("WebCopyText.jslib")]
+    private static extern void CopyText(string str);
+    [DllImport("WebCopyText.jslib")]
+     private static extern void CopyTextApple(string str);
 #else
     [DllImport("__Internal")]
+    private static extern void CopyText(string str);    
+    [DllImport("__Internal")]
+    private static extern void CopyTextApple(string str);
 #endif
-    private static extern void CopyText(string str);
 
     public GUIDHelper GUIDHelper;
     public TextMeshProUGUI GUIDText;
@@ -31,6 +36,7 @@ public class EndGameUI : MonoBehaviour
         if(Application.platform == RuntimePlatform.WebGLPlayer)
         {
             CopyText(GUIDText.text);
+            //CopyTextApple(GUIDText.text);
         }
         else
         {

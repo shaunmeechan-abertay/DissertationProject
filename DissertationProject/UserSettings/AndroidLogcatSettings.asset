@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "52037614b4ac2445",
         "name": "com.DefaultCompany.DissertationProject",
-        "processId": 13444,
+        "processId": 11898,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -24,6 +24,12 @@
             "deviceId": "52037614b4ac2445",
             "name": "com.DefaultCompany.DissertationProject",
             "processId": 13444,
+            "exited": false
+        },
+        {
+            "deviceId": "52037614b4ac2445",
+            "name": "com.DefaultCompany.DissertationProject",
+            "processId": 11898,
             "exited": false
         }
     ],
