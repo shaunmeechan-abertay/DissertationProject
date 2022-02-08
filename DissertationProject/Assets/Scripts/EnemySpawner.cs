@@ -221,7 +221,7 @@ public class EnemySpawner : MonoBehaviour
             case 11:
                 if (shouldShowCheatMessages == true)
                 {
-                    cheatMessage = "Destroying half the towers";
+                    cheatMessage = "Destroying half the towers and Destroying all build pads";
                 }
                 inbetweenWaveText.text = "Fast units inbound! " + cheatMessage;
                 break;
@@ -236,6 +236,7 @@ public class EnemySpawner : MonoBehaviour
             case 13:
                 inbetweenWaveText.text = "GAME OVER!";
                 nextLevelButton.SetActive(true);
+                GameObject.FindGameObjectWithTag("NextLevelButton").SetActive(false);
                 break;
             default:
                 break;

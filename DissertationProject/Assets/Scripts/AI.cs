@@ -134,6 +134,7 @@ public class AI : MonoBehaviour
                 break;
             case 11:
                 destroyTowers(0.5f);
+                destroyAllBuildPads();
                 break;
             case 12:
                 destroyAllBuildPads();

@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     Vector2 direction;
     public float health = 5.0f;
     ScoreManager scoreManager;
+    float timeToLeave = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +47,7 @@ public class Enemy : MonoBehaviour
         direction = targetPathNode.position - transform.localPosition;
         //This represents the distance we covered this frame
         float disThisFrame = speed * Time.deltaTime;
-
+        timeToLeave += Time.deltaTime;
         if(direction.magnitude <= disThisFrame)
         {
             //We reached the node
@@ -82,7 +83,7 @@ public class Enemy : MonoBehaviour
 
     void reachedGoal()
     {
-        Debug.Log("Reached goal!");
+        //Debug.Log("Time to leave: " + timeToLeave);
         scoreManager.decrementLife(1);
         Destroy(gameObject);
     }

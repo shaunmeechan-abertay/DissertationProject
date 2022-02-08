@@ -29,6 +29,14 @@ public class AnalyticsManager : MonoBehaviour
             getUID();
         }
 
+        //If the UID is still null something has gone very wrong
+        //Error out!
+        if(UID == null)
+        {
+            Debug.LogError("ERROR: Unable to get GUID");
+            return;
+        }
+
         AnalyticsResult analyticsResult = Analytics.CustomEvent("LevelWin: " + UID);
         Debug.Log("Analytics result: " + analyticsResult);
         analyticsResult = Analytics.CustomEvent("Player lives: " + GameObject.FindGameObjectWithTag("GameController").GetComponent<ScoreManager>().lives + " : " + UID);
@@ -56,6 +64,14 @@ public class AnalyticsManager : MonoBehaviour
         if (UID == null)
         {
             getUID();
+        }
+
+        //If the UID is still null something has gone very wrong
+        //Error out!
+        if (UID == null)
+        {
+            Debug.LogError("ERROR: Unable to get GUID");
+            return;
         }
 
         AnalyticsResult analyticsResult = Analytics.CustomEvent("LevelLose on wave " + GameObject.FindGameObjectWithTag("Spawner").GetComponent<EnemySpawner>().getWave() + " : " + UID);
@@ -88,6 +104,14 @@ public class AnalyticsManager : MonoBehaviour
             getUID();
         }
 
+        //If the UID is still null something has gone very wrong
+        //Error out!
+        if (UID == null)
+        {
+            Debug.LogError("ERROR: Unable to get GUID");
+            return;
+        }
+
         AnalyticsResult analyticsResult = Analytics.CustomEvent("AI cheated by decreasing health: " + UID);
         Debug.Log("Analytics result: " + analyticsResult);
     }
@@ -102,6 +126,14 @@ public class AnalyticsManager : MonoBehaviour
         if (UID == null)
         {
             getUID();
+        }
+
+        //If the UID is still null something has gone very wrong
+        //Error out!
+        if (UID == null)
+        {
+            Debug.LogError("ERROR: Unable to get GUID");
+            return;
         }
 
         AnalyticsResult analyticsResult = Analytics.CustomEvent("AI cheated by decreasing money: " + UID);
@@ -120,6 +152,14 @@ public class AnalyticsManager : MonoBehaviour
             getUID();
         }
 
+        //If the UID is still null something has gone very wrong
+        //Error out!
+        if (UID == null)
+        {
+            Debug.LogError("ERROR: Unable to get GUID");
+            return;
+        }
+
         AnalyticsResult analyticsResult = Analytics.CustomEvent("AI cheated by destroying a tower: " + UID);
         Debug.Log("Analytics result: " + analyticsResult);
     }
@@ -134,6 +174,14 @@ public class AnalyticsManager : MonoBehaviour
         if (UID == null)
         {
             getUID();
+        }
+
+        //If the UID is still null something has gone very wrong
+        //Error out!
+        if (UID == null)
+        {
+            Debug.LogError("ERROR: Unable to get GUID");
+            return;
         }
 
         AnalyticsResult analyticsResult = Analytics.CustomEvent("AI cheated by destroying the centre towers: " + UID);
@@ -152,6 +200,14 @@ public class AnalyticsManager : MonoBehaviour
             getUID();
         }
 
+        //If the UID is still null something has gone very wrong
+        //Error out!
+        if (UID == null)
+        {
+            Debug.LogError("ERROR: Unable to get GUID");
+            return;
+        }
+
         AnalyticsResult analyticsResult = Analytics.CustomEvent("AI cheated by creating a new path: " + UID);
         Debug.Log("Analytics result: " + analyticsResult);
     }
@@ -168,6 +224,14 @@ public class AnalyticsManager : MonoBehaviour
             getUID();
         }
 
+        //If the UID is still null something has gone very wrong
+        //Error out!
+        if (UID == null)
+        {
+            Debug.LogError("ERROR: Unable to get GUID");
+            return;
+        }
+
         AnalyticsResult analyticsResult = Analytics.CustomEvent("AI cheated by Destroying all Buildpads: " + UID);
         Debug.Log("Analytics result: " + analyticsResult);
     }
@@ -182,6 +246,14 @@ public class AnalyticsManager : MonoBehaviour
         if (UID == null)
         {
             getUID();
+        }
+
+        //If the UID is still null something has gone very wrong
+        //Error out!
+        if (UID == null)
+        {
+            Debug.LogError("ERROR: Unable to get GUID");
+            return;
         }
 
         AnalyticsResult analyticsResult = Analytics.CustomEvent("AI cheated by Destroying half of the towers: " + UID);
