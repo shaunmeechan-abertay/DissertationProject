@@ -43,6 +43,6 @@ public class EndGameUI : MonoBehaviour
             GUIUtility.systemCopyBuffer = GUIDText.text;
         }
 
-        Application.OpenURL("https://forms.gle/DLW5NCTGqpohUhy76");
+        //Application.OpenURL("https://forms.gle/DLW5NCTGqpohUhy76");
     }
 }

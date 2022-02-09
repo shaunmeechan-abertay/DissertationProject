@@ -2,11 +2,15 @@ mergeInto(LibraryManager.library, {
 
   CopyText: function (str) {
     const textToCopy = UTF8ToString(str);
-    navigator.clipboard.writeText(textToCopy).then(function() {
+    navigator.clipboard.writeText(textToCopy)
+    .then(() => {
   /* clipboard successfully set */
-}, function() {
+  window.open("https://forms.gle/DLW5NCTGqpohUhy76");
+})
+    .catch(err => {
   /* clipboard write failed */
-  window.alert("Failed to copy text! It's possible you are using an unsupported browser such as Safari. Please copy your code manually: " + textToCopy);
+  window.alert("Failed to copy text! It's possible you are using an unsupported browser. Please copy your code manually: " + textToCopy + " " + err);
+    window.open("https://forms.gle/DLW5NCTGqpohUhy76");
 });
 
   },
