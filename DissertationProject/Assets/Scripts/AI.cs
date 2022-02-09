@@ -192,6 +192,12 @@ public class AI : MonoBehaviour
             Destroy(destroyableBuildPads[i]);
         }
 
+        BuildPad[] pads = GameObject.FindObjectsOfType<BuildPad>();
+        for (int i = 0; i < pads.Length; i++)
+        {
+            pads[i].gameObject.SetActive(false);
+        }
+
         analyticsManager.sendCheatDestroyedAllBuildPads();
     }
 

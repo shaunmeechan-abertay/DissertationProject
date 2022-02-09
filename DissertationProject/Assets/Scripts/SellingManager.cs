@@ -106,26 +106,27 @@ public class SellingManager : MonoBehaviour
     {
         if (selectedTower != null)
         {
+            GameObject temp;
             scoreManager.incrementMoney(selectedTower.cost);
             //Now need to place a new buildPad
             if (selectedTower.transform.position.y >= 3.5f)
             {
-                GameObject temp = Instantiate(prefabToSpawn, selectedTower.transform.position, Quaternion.identity);
+                temp = Instantiate(prefabToSpawn, selectedTower.transform.position, Quaternion.identity);
                 temp.GetComponent<BuildPad>().isDestroyable = true;
             }
             else if(selectedTower.transform.position.y == 1.5f)
             {
-                GameObject temp = Instantiate(prefabToSpawn, selectedTower.transform.position, Quaternion.identity);
+                temp = Instantiate(prefabToSpawn, selectedTower.transform.position, Quaternion.identity);
                 temp.GetComponent<BuildPad>().isCentre = true;
             }
             else if(selectedTower.transform.position.y == -0.5f)
             {
-                GameObject temp = Instantiate(prefabToSpawn, selectedTower.transform.position, Quaternion.identity);
+                temp = Instantiate(prefabToSpawn, selectedTower.transform.position, Quaternion.identity);
                 temp.GetComponent<BuildPad>().isCentre = true;
             }
             else
             {
-                Instantiate(prefabToSpawn, selectedTower.transform.position, Quaternion.identity);
+                temp = Instantiate(prefabToSpawn, selectedTower.transform.position, Quaternion.identity);
             }
             Destroy(selectedTower.gameObject);
             selectedTower = null;
