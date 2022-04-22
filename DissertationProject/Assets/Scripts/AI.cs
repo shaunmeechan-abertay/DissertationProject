@@ -110,34 +110,61 @@ public class AI : MonoBehaviour
         switch (waveCounter)
         {
             case 3:
-                subtractPlayerMoney();
+                if(shouldDecrementMoney == true)
+                {
+                    subtractPlayerMoney();
+                }
                 break;
             case 4:
                 break;
             case 5:
-                destroyTower();
+                if(shouldDeleteTowers == true)
+                {
+                    destroyTower();
+                }
                 break;
             case 6:
-                destroyTower();
+                if(shouldDeleteTowers == true)
+                {
+                    destroyTower();
+                }
                 break;
             case 7:
-                subtractPlayerHealth();
+                if(shouldDecrementHealth == true)
+                {
+                    subtractPlayerHealth();
+                }
                 break;
             case 8:
-                subtractPlayerMoney();
+                if(shouldDecrementMoney == true)
+                {
+                    subtractPlayerMoney();
+                }
                 break;
             case 9:
-                createNewPath();
+                if(shouldCreateNewPath == true)
+                {
+                    createNewPath();
+                }
                 break;
             case 10:
-                destroyCentreTowers();
+                if(shouldDestoryCentreTowers == true)
+                {
+                    destroyCentreTowers();
+                }
                 break;
             case 11:
-                destroyTowers(0.5f);
-                destroyAllBuildPads();
+                if (shouldDeleteTowers == true)
+                {
+                    destroyTowers(0.5f);
+                    destroyAllBuildPads();
+                }
                 break;
             case 12:
-                destroyAllBuildPads();
+                if(shouldDeleteTowers == true)
+                {
+                    destroyAllBuildPads();
+                }
                 break;
             default:
                 //Debug.LogError("ERROR: waveCounter was not valid for switch statement.");

@@ -2094,7 +2094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e4fed69f0746714f8ea814afde803e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bShouldSendAnalytics: 1
+  bShouldSendAnalytics: 0
 --- !u!4 &458899904
 Transform:
   m_ObjectHideFlags: 0
@@ -2196,7 +2196,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.9
+  m_fontSize: 44.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4194,7 +4194,7 @@ MonoBehaviour:
   moneyText: {fileID: 935790892}
   livesText: {fileID: 177767278}
   waveText: {fileID: 928481835}
-  canLose: 1
+  canLose: 0
 --- !u!4 &984674558
 Transform:
   m_ObjectHideFlags: 0
@@ -4261,11 +4261,11 @@ MonoBehaviour:
   - {fileID: 568260321}
   - {fileID: 1678808186}
   bCanPlayAudio: 1
-  shouldDeleteTowers: 1
-  shouldDecrementHealth: 1
-  shouldDecrementMoney: 1
-  shouldDestoryCentreTowers: 1
-  shouldCreateNewPath: 1
+  shouldDeleteTowers: 0
+  shouldDecrementHealth: 0
+  shouldDecrementMoney: 0
+  shouldDestoryCentreTowers: 0
+  shouldCreateNewPath: 0
   audioButtonImage: {fileID: 830831207}
 --- !u!114 &984674561
 MonoBehaviour:
